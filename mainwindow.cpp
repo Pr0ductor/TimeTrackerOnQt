@@ -4,6 +4,8 @@
 #include "Kanban/kanban.h"
 #include "Timer/timer.h"
 #include "Reminder/reminder.h"
+#include <QTimer>
+#include <QTime>
 
 
 MainWindow::MainWindow(QWidget *parent)
@@ -11,11 +13,27 @@ MainWindow::MainWindow(QWidget *parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+
+    QTimer *time = new QTimer(this);
+    connect(time, &QTimer::timeout, this, &MainWindow::updateCurrentTime);
+    time->start(1000);
+
+    updateCurrentTime();
 }
 
 MainWindow::~MainWindow()
 {
     delete ui;
+}
+
+void MainWindow::updateCurrentTime()
+{
+
+    QTime currentTime = QTime::currentTime();
+
+    QString timeText = currentTime.toString("hh:mm");
+
+    ui->TimeOnMainMenu->setText(timeText);
 }
 
 void MainWindow::on_ButtonStopWatchOnMainWindow_clicked()

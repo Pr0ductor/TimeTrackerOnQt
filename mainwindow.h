@@ -27,6 +27,8 @@ private slots:
     void on_ButtonReminderOnMainWindow_clicked();
     void on_ButtonKanbanOnMainWindow_clicked();
 
+    void updateCurrentTime();
+
 private:
     Ui::MainWindow *ui;
 };

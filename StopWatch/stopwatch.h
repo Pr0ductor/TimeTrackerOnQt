@@ -2,6 +2,8 @@
 #define STOPWATCH_H
 
 #include <QMainWindow>
+#include <QMainWindow>
+#include <QTimer>
 
 QT_BEGIN_NAMESPACE
 namespace Ui {
@@ -19,9 +21,17 @@ public:
 
 private slots:
     void on_GoBackToMenu_clicked();
+    void onStartButtonClicked();
+    void onStopButtonClicked();
 
 private:
     Ui::StopWatch *ui;
+
+    QTimer *stopwatch;
+    int elapsedMilliseconds;
+    bool isRunning;
+
+    QString formatTime(int milliseconds);
 };
 
 #endif // STOPWATCH_H
