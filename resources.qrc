@@ -1,0 +1,9 @@
+<RCC>
+    <qresource prefix="/">
+        <file>resources/KanbanIcon.png</file>
+        <file>resources/ReminderIcon.png</file>
+        <file>resources/Setting.png</file>
+        <file>resources/StopWatchIcon.png</file>
+        <file>resources/TimerIcon.png</file>
+    </qresource>
+</RCC>

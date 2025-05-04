@@ -1,0 +1,7 @@
+<RCC>
+    <qresource prefix="/icons">
+        <file>StopWatchResources/Backmenu.png</file>
+        <file>StopWatchResources/clock_icon.png</file>
+        <file>StopWatchResources/clock.png</file>
+    </qresource>
+</RCC>

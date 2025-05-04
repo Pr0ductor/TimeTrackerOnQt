@@ -1,0 +1,8 @@
+<RCC>
+    <qresource prefix="/Kanban">
+        <file>Backmenu.png</file>
+        <file>KanbanIcon.png</file>
+        <file>Right Arrow.png</file>
+        <file>Multiply.png</file>
+    </qresource>
+</RCC>

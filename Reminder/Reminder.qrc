@@ -1,0 +1,8 @@
+<RCC>
+    <qresource prefix="/Reminder">
+        <file>Backmenu.png</file>
+        <file>calendar-add.png</file>
+        <file>calendar-tick.png</file>
+        <file>klipartz.com.png</file>
+    </qresource>
+</RCC>

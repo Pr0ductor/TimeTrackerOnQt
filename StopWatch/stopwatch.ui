@@ -1,0 +1,710 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>StopWatch</class>
+ <widget class="QMainWindow" name="StopWatch">
+  <property name="enabled">
+   <bool>true</bool>
+  </property>
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1900</width>
+    <height>1000</height>
+   </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>1900</width>
+    <height>0</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>StopWatch</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: #D9D9D9;</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QLabel" name="GoBackToMenuLabel">
+    <property name="geometry">
+     <rect>
+      <x>100</x>
+      <y>10</y>
+      <width>286</width>
+      <height>48</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>38</pointsize>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QLabel{
+    background-color: transparent; /* Прозрачный фон */
+    border: none;                /* Убираем границы */
+    padding: 0;                  /* Убираем внутренние отступы, если они есть */
+	color: black;
+}</string>
+    </property>
+    <property name="text">
+     <string>Go back to menu</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="GoBackToMenu">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>0</y>
+      <width>75</width>
+      <height>75</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+    background-color: transparent; /* Прозрачный фон */
+    border: none;                /* Убираем границы */
+    padding: 0;                  /* Убираем внутренние отступы, если они есть */
+}</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="icon">
+     <iconset>
+      <normaloff>:/icons/StopWatchResources/Backmenu.png</normaloff>:/icons/StopWatchResources/Backmenu.png</iconset>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>74</width>
+      <height>74</height>
+     </size>
+    </property>
+   </widget>
+   <widget class="QLabel" name="StopWatchName">
+    <property name="geometry">
+     <rect>
+      <x>290</x>
+      <y>0</y>
+      <width>574</width>
+      <height>154</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>62</pointsize>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QLabel{
+    background-color: transparent; /* Прозрачный фон */
+    border: none;                /* Убираем границы */
+    padding: 0;                  /* Убираем внутренние отступы, если они есть */
+	color: black;
+}</string>
+    </property>
+    <property name="text">
+     <string>Stopwatch</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignmentFlag::AlignHCenter|Qt::AlignmentFlag::AlignTop</set>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_3">
+    <property name="geometry">
+     <rect>
+      <x>400</x>
+      <y>80</y>
+      <width>450</width>
+      <height>450</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QLabel{
+    background-color: transparent; /* Прозрачный фон */
+    border: none;                /* Убираем границы */
+    padding: 0;                  /* Убираем внутренние отступы, если они есть */
+}</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="pixmap">
+     <pixmap>:/icons/StopWatchResources/clock_icon.png</pixmap>
+    </property>
+   </widget>
+   <widget class="QLabel" name="StopWatchIconOnStopWatch">
+    <property name="geometry">
+     <rect>
+      <x>730</x>
+      <y>-10</y>
+      <width>130</width>
+      <height>130</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QLabel {
+    background-color: transparent; 
+    border: none;                
+    padding: 0;                
+}</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="pixmap">
+     <pixmap>:/icons/StopWatchResources/clock.png</pixmap>
+    </property>
+   </widget>
+   <widget class="QLabel" name="StopWatchMain">
+    <property name="geometry">
+     <rect>
+      <x>440</x>
+      <y>270</y>
+      <width>363</width>
+      <height>77</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>64</pointsize>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QLabel {
+    text-align: center; 
+    background-color: transparent; 
+    color: black
+}</string>
+    </property>
+    <property name="text">
+     <string>00:00:00:00</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_6">
+    <property name="geometry">
+     <rect>
+      <x>290</x>
+      <y>560</y>
+      <width>681</width>
+      <height>81</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QLabel {
+background-color: #3E828C; /* Цвет фона */
+border-radius: 40px; /* Затупленные углы */
+padding: 0; /* Отступы */
+}</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="StartButtonOnStopWatch">
+    <property name="geometry">
+     <rect>
+      <x>340</x>
+      <y>580</y>
+      <width>256</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+    background-color: #D9D9D9; /* Цвет фона */
+    border-radius: 20px;      /* Затупленные углы */
+    padding: 10px;           /* Отступы внутри кнопки */
+    color: black;             /* Цвет текста */
+    font-size: 18px;         /* Размер шрифта */
+}</string>
+    </property>
+    <property name="text">
+     <string>Start</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="StopButtonOnStopWatch">
+    <property name="geometry">
+     <rect>
+      <x>660</x>
+      <y>580</y>
+      <width>256</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+    background-color: #D9D9D9; /* Цвет фона */
+    border-radius: 20px;      /* Затупленные углы */
+    padding: 10px;           /* Отступы внутри кнопки */
+    color: black;             /* Цвет текста */
+    font-size: 18px;         /* Размер шрифта */
+}</string>
+    </property>
+    <property name="text">
+     <string>Stop</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="MenuForSavingResultsOnStopWatch">
+    <property name="geometry">
+     <rect>
+      <x>1000</x>
+      <y>10</y>
+      <width>460</width>
+      <height>656</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QLabel {
+background-color: #3E828C; /* Цвет фона */
+border-radius: 40px; /* Затупленные углы */
+padding: 0; /* Отступы */
+}</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="ApplySaveButtonOnStopWatch">
+    <property name="geometry">
+     <rect>
+      <x>1100</x>
+      <y>500</y>
+      <width>262</width>
+      <height>73</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+    background-color: #D9D9D9; /* Прозрачный фон */
+    border: none;                /* Убираем границы */
+    padding: 10px;              /* Отступы внутри */
+    color: black;               /* Цвет текста */
+    font-size: 46px;            /* Размер шрифта */
+    border-radius: 10px;        /* Затупленные углы */
+}</string>
+    </property>
+    <property name="text">
+     <string>Apply save</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_8">
+    <property name="geometry">
+     <rect>
+      <x>1060</x>
+      <y>30</y>
+      <width>317</width>
+      <height>48</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>26</pointsize>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QLabel {
+color: white;             /* Белый цвет текста */
+background-color: transparent; /* Прозрачный фон */
+}</string>
+    </property>
+    <property name="text">
+     <string>Options for saving</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignmentFlag::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_9">
+    <property name="geometry">
+     <rect>
+      <x>1080</x>
+      <y>140</y>
+      <width>11</width>
+      <height>24</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QLabel {
+color: white;             /* Белый цвет текста */
+background-color: transparent; /* Прозрачный фон */
+}</string>
+    </property>
+    <property name="text">
+     <string>h</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignmentFlag::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_10">
+    <property name="geometry">
+     <rect>
+      <x>1180</x>
+      <y>140</y>
+      <width>11</width>
+      <height>24</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QLabel {
+color: white;             /* Белый цвет текста */
+background-color: transparent; /* Прозрачный фон */
+}</string>
+    </property>
+    <property name="text">
+     <string>m</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignmentFlag::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_11">
+    <property name="geometry">
+     <rect>
+      <x>1280</x>
+      <y>140</y>
+      <width>11</width>
+      <height>24</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QLabel {
+color: white;             /* Белый цвет текста */
+background-color: transparent; /* Прозрачный фон */
+}</string>
+    </property>
+    <property name="text">
+     <string>s</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignmentFlag::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_12">
+    <property name="geometry">
+     <rect>
+      <x>1370</x>
+      <y>140</y>
+      <width>17</width>
+      <height>24</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QLabel {
+color: white;             /* Белый цвет текста */
+background-color: transparent; /* Прозрачный фон */
+}</string>
+    </property>
+    <property name="text">
+     <string>ms</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignmentFlag::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QLabel" name="TimeOnMenuOnStopWatch">
+    <property name="geometry">
+     <rect>
+      <x>1010</x>
+      <y>160</y>
+      <width>445</width>
+      <height>90</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>66</pointsize>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QLabel {
+border-radius: 25px;  
+ color: black 
+}</string>
+    </property>
+    <property name="text">
+     <string>00:10:00:00</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignmentFlag::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QTextEdit" name="TextEditOnStopWatch">
+    <property name="geometry">
+     <rect>
+      <x>1010</x>
+      <y>270</y>
+      <width>445</width>
+      <height>180</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QTextEdit {
+    background-color: #D9D9D9;
+    border-radius: 20px;
+    padding: 10px;
+    font-size: 16px;
+    color: black;
+}</string>
+    </property>
+    <property name="html">
+     <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;meta charset=&quot;utf-8&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+hr { height: 1px; border-width: 0; }
+li.unchecked::marker { content: &quot;\2610&quot;; }
+li.checked::marker { content: &quot;\2612&quot;; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'.AppleSystemUIFont'; font-size:16px; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Description of the completed task&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_14">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>610</y>
+      <width>384</width>
+      <height>77</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>28</pointsize>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color:black; background-color: transparent;</string>
+    </property>
+    <property name="text">
+     <string>Saved Results</string>
+    </property>
+   </widget>
+   <widget class="QFrame" name="frame">
+    <property name="geometry">
+     <rect>
+      <x>-20</x>
+      <y>670</y>
+      <width>1900</width>
+      <height>250</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: #D9D9D9; /* Серый фон */
+border-radius: 10px;       /* Затупленные углы */
+padding: 10px;            /* Отступы внутри */</string>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::Shape::StyledPanel</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Shadow::Raised</enum>
+    </property>
+    <widget class="QLabel" name="label_15">
+     <property name="geometry">
+      <rect>
+       <x>-70</x>
+       <y>20</y>
+       <width>1900</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: transparent; /* Прозрачный фон */
+border-top: 2px solid #3E828C; /* Зеленая верхняя граница */</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="pushButton_5">
+     <property name="geometry">
+      <rect>
+       <x>30</x>
+       <y>30</y>
+       <width>200</width>
+       <height>200</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton {
+    background-color: #565555;         /* Цвет внешнего фона */
+    border-radius: 10px;               /* Затупленные углы */
+    padding: 10px;                    /* Отступы внутри */
+    color: white;                     /* Белый цвет текста */
+    font-size: 18px;                  /* Размер шрифта времени */
+    font-weight: bold;                /* Жирный шрифт */
+}
+
+QPushButton:hover {
+    background-color: #4CA8B7;        /* Цвет при наведении курсора */
+}</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_16">
+     <property name="geometry">
+      <rect>
+       <x>50</x>
+       <y>50</y>
+       <width>157</width>
+       <height>157</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>-1</pointsize>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: #3E828C;         /* Цвет внутреннего круга */
+border-radius: 75%;               /* Круглый фон */
+padding: 10px;                    /* Отступы внутри */
+color: white;                     /* Белый цвет текста */
+font-size: 30px;                  /* Размер шрифта времени */
+font-weight: bold;                /* Жирный шрифт */</string>
+     </property>
+     <property name="text">
+      <string>10:00</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignmentFlag::AlignCenter</set>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="pushButton_6">
+     <property name="geometry">
+      <rect>
+       <x>310</x>
+       <y>30</y>
+       <width>200</width>
+       <height>200</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton {
+    background-color: #565555;         /* Цвет внешнего фона */
+    border-radius: 10px;               /* Затупленные углы */
+    padding: 10px;                    /* Отступы внутри */
+    color: white;                     /* Белый цвет текста */
+    font-size: 18px;                  /* Размер шрифта времени */
+    font-weight: bold;                /* Жирный шрифт */
+}
+
+QPushButton:hover {
+    background-color: #4CA8B7;        /* Цвет при наведении курсора */
+}</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="pushButton_7">
+     <property name="geometry">
+      <rect>
+       <x>580</x>
+       <y>30</y>
+       <width>200</width>
+       <height>200</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton {
+    background-color: #565555;         /* Цвет внешнего фона */
+    border-radius: 10px;               /* Затупленные углы */
+    padding: 10px;                    /* Отступы внутри */
+    color: white;                     /* Белый цвет текста */
+    font-size: 18px;                  /* Размер шрифта времени */
+    font-weight: bold;                /* Жирный шрифт */
+}
+
+QPushButton:hover {
+    background-color: #4CA8B7;        /* Цвет при наведении курсора */
+}</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_17">
+     <property name="geometry">
+      <rect>
+       <x>330</x>
+       <y>50</y>
+       <width>157</width>
+       <height>157</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>-1</pointsize>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: #3E828C;         /* Цвет внутреннего круга */
+border-radius: 75%;               /* Круглый фон */
+padding: 10px;                    /* Отступы внутри */
+color: white;                     /* Белый цвет текста */
+font-size: 30px;                  /* Размер шрифта времени */
+font-weight: bold;                /* Жирный шрифт */</string>
+     </property>
+     <property name="text">
+      <string>10:00</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignmentFlag::AlignCenter</set>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_18">
+     <property name="geometry">
+      <rect>
+       <x>600</x>
+       <y>50</y>
+       <width>157</width>
+       <height>157</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>-1</pointsize>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: #3E828C;         /* Цвет внутреннего круга */
+border-radius: 75%;               /* Круглый фон */
+padding: 10px;                    /* Отступы внутри */
+color: white;                     /* Белый цвет текста */
+font-size: 30px;                  /* Размер шрифта времени */
+font-weight: bold;                /* Жирный шрифт */</string>
+     </property>
+     <property name="text">
+      <string>10:00</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignmentFlag::AlignCenter</set>
+     </property>
+    </widget>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1900</width>
+     <height>36</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
