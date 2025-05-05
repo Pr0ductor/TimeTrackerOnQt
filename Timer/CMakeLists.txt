@@ -20,10 +20,12 @@ set(TIMER_SOURCES
     timer.cpp
     timer.h
     timer.ui
+    ../Timer/Timer.qrc
 )
 
 # Создание статической библиотеки
-add_library(Timer STATIC ${TIMER_SOURCES})
+add_library(Timer STATIC ${TIMER_SOURCES}
+    timeron.h timeron.cpp timeron.ui)
 
 # Связывание библиотеки с Qt
 target_link_libraries(Timer PRIVATE Qt${QT_VERSION_MAJOR}::Widgets)

@@ -20,6 +20,8 @@ public:
 private slots:
     void on_GoBackToMenu_clicked();
 
+    void onStartButtonClicked();
+
 private:
     Ui::Timer *ui;
 };

@@ -1,0 +1,8 @@
+<RCC>
+    <qresource prefix="/Timer">
+        <file>Ellipse 1.png</file>
+        <file>Backmenu.png</file>
+        <file>image 3.png</file>
+        <file>timer.png</file>
+    </qresource>
+</RCC>
