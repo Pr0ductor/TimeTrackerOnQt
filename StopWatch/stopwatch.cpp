@@ -51,6 +51,7 @@ void StopWatch::onStopButtonClicked()
     if (isRunning) {
         stopwatch->stop();
         isRunning = false;
+        ui->TimeOnMenuOnStopWatch->setText(formatTime(elapsedMilliseconds));
     }
 }
 
