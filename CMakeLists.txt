@@ -22,6 +22,8 @@ set(PROJECT_SOURCES
     mainwindow.h
     mainwindow.ui
     resources.qrc
+    messageboxhelper.h
+    messageboxhelper.cpp
 )
 
 # Создание исполняемого файла
@@ -33,6 +35,8 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
         Kanban/Kanban.qrc
         Reminder/Reminder.qrc
         Timer/Timer.qrc
+        messageboxhelper.h
+        messageboxhelper.cpp
 
     )
 else()
@@ -90,3 +94,4 @@ install(TARGETS TimeTracker
 if(QT_VERSION_MAJOR EQUAL 6)
     qt_finalize_executable(TimeTracker)
 endif()
+

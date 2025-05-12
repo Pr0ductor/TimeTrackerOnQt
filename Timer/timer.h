@@ -22,7 +22,10 @@ private slots:
 
     void onStartButtonClicked();
 
+    void on_Select_Time_userTimeChanged(const QTime &time);
+
 private:
     Ui::Timer *ui;
+    QString formatTime(int milliseconds);
 };
 #endif // TIMER_H

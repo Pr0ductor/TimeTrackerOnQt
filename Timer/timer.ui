@@ -180,34 +180,6 @@ padding: 0; /* Отступы */
      <set>Qt::AlignmentFlag::AlignCenter</set>
     </property>
    </widget>
-   <widget class="QLabel" name="label_7">
-    <property name="geometry">
-     <rect>
-      <x>997</x>
-      <y>220</y>
-      <width>450</width>
-      <height>90</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <pointsize>90</pointsize>
-     </font>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">QLabel {
-border-radius: 25px;  
- color: black 
-}
-</string>
-    </property>
-    <property name="text">
-     <string>00:10:00</string>
-    </property>
-    <property name="alignment">
-     <set>Qt::AlignmentFlag::AlignCenter</set>
-    </property>
-   </widget>
    <widget class="QLabel" name="label_9">
     <property name="geometry">
      <rect>
@@ -274,7 +246,7 @@ background-color: transparent; /* Прозрачный фон */
      <set>Qt::AlignmentFlag::AlignCenter</set>
     </property>
    </widget>
-   <widget class="QTextEdit" name="textEdit">
+   <widget class="QTextEdit" name="Description">
     <property name="geometry">
      <rect>
       <x>997</x>
@@ -339,44 +311,27 @@ padding: 0; /* Отступы */
      <string/>
     </property>
    </widget>
-   <widget class="QPushButton" name="DeclineButtonOnTimer">
-    <property name="geometry">
-     <rect>
-      <x>350</x>
-      <y>600</y>
-      <width>256</width>
-      <height>41</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">QPushButton {
-    background-color: #D9D9D9; /* Цвет фона */
-    border-radius: 20px;      /* Затупленные углы */
-    padding: 10px;           /* Отступы внутри кнопки */
-    color: black;             /* Цвет текста */
-    font-size: 18px;         /* Размер шрифта */
-}</string>
-    </property>
-    <property name="text">
-     <string>Decline</string>
-    </property>
-   </widget>
    <widget class="QPushButton" name="StartButtonOnTimer">
     <property name="geometry">
      <rect>
-      <x>640</x>
-      <y>600</y>
-      <width>256</width>
-      <height>41</height>
+      <x>310</x>
+      <y>595</y>
+      <width>621</width>
+      <height>51</height>
      </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>-1</pointsize>
+     </font>
     </property>
     <property name="styleSheet">
      <string notr="true">QPushButton {
-    background-color: #D9D9D9; /* Цвет фона */
-    border-radius: 20px;      /* Затупленные углы */
-    padding: 10px;           /* Отступы внутри кнопки */
-    color: black;             /* Цвет текста */
-    font-size: 18px;         /* Размер шрифта */
+    background-color: #D9D9D9; 
+    border-radius: 20px;      
+    padding: 10px;           
+    color: black;             
+    font-size: 28px;        
 }</string>
     </property>
     <property name="text">
@@ -661,6 +616,68 @@ font-weight: bold;                /* Жирный шрифт */</string>
      <string>00:00:00</string>
     </property>
    </widget>
+   <widget class="QTimeEdit" name="Select_Time">
+    <property name="geometry">
+     <rect>
+      <x>1010</x>
+      <y>220</y>
+      <width>431</width>
+      <height>81</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>35</pointsize>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="mouseTracking">
+     <bool>false</bool>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QTimeEdit {
+    background-color: #D9D9D9;
+    border-radius: 20px;
+    color: black;
+    padding-left: 100;
+    border-radius: 50px;
+}</string>
+    </property>
+    <property name="date">
+     <date>
+      <year>2000</year>
+      <month>1</month>
+      <day>1</day>
+     </date>
+    </property>
+    <property name="maximumDateTime">
+     <datetime>
+      <hour>17</hour>
+      <minute>59</minute>
+      <second>59</second>
+      <year>2000</year>
+      <month>1</month>
+      <day>1</day>
+     </datetime>
+    </property>
+    <property name="maximumDate">
+     <date>
+      <year>2000</year>
+      <month>1</month>
+      <day>1</day>
+     </date>
+    </property>
+    <property name="displayFormat">
+     <string>HH:mm:ss</string>
+    </property>
+    <property name="time">
+     <time>
+      <hour>0</hour>
+      <minute>0</minute>
+      <second>0</second>
+     </time>
+    </property>
+   </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
@@ -668,7 +685,7 @@ font-weight: bold;                /* Жирный шрифт */</string>
      <x>0</x>
      <y>0</y>
      <width>1900</width>
-     <height>36</height>
+     <height>25</height>
     </rect>
    </property>
   </widget>

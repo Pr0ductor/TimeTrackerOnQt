@@ -29,3 +29,7 @@ add_library(Timer STATIC ${TIMER_SOURCES}
 
 # Связывание библиотеки с Qt
 target_link_libraries(Timer PRIVATE Qt${QT_VERSION_MAJOR}::Widgets)
+
+target_include_directories(Timer PUBLIC
+    ${CMAKE_SOURCE_DIR}/TimeTracker/  # Путь к заголовочным файлам TimeTracker
+)
