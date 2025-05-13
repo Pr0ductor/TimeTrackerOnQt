@@ -1,6 +1,31 @@
 #include "messageboxhelper.h"
+#include <QMessageBox>
 
-void MessageBoxHelper::showMessage(QWidget *parent, MessageType type, const QString &title, const QString &text) {
+// Объявление статической переменной
+MessageBoxHelper* MessageBoxHelper::m_instance = nullptr;
+
+// Реализация статического метода instance()
+MessageBoxHelper& MessageBoxHelper::instance()
+{
+    if (!m_instance) {
+        m_instance = new MessageBoxHelper;
+    }
+    return *m_instance;
+}
+
+MessageBoxHelper::MessageBoxHelper(QObject *parent)
+    : QObject(parent)
+{
+}
+
+MessageBoxHelper::~MessageBoxHelper()
+{
+    delete m_instance;
+    m_instance = nullptr;
+}
+
+void MessageBoxHelper::showMessage(QWidget *parent, MessageType type, const QString &title, const QString &text)
+{
     QMessageBox msgBox(parent);
 
     // Настройка заголовка и текста
@@ -27,7 +52,6 @@ void MessageBoxHelper::showMessage(QWidget *parent, MessageType type, const QStr
         break;
     }
 
-    // Настройка стиля (опционально)
     msgBox.setStyleSheet(R"(
         QMessageBox {
             background-color: #d9d9d9;
@@ -46,6 +70,9 @@ void MessageBoxHelper::showMessage(QWidget *parent, MessageType type, const QStr
             background-color: #0056b3;
         }
     )");
+
+    // Эмитируем сигнал finished() после закрытия диалога
+    QObject::connect(&msgBox, &QMessageBox::finished, this, &MessageBoxHelper::finished);
 
     // Отображение окна
     msgBox.exec();

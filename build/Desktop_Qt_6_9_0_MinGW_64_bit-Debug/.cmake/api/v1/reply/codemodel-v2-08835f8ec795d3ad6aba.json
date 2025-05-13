@@ -1,0 +1,301 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"childIndexes" : 
+					[
+						1,
+						2,
+						3,
+						4
+					],
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-.-Debug-2a622eaaef008977e7db.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.16"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						9,
+						10,
+						11
+					]
+				},
+				{
+					"build" : "StopWatch",
+					"jsonFile" : "directory-StopWatch-Debug-aab2e66bad73bc5bcabc.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.16"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 1,
+					"source" : "StopWatch",
+					"targetIndexes" : 
+					[
+						6,
+						7,
+						8
+					]
+				},
+				{
+					"build" : "Timer",
+					"jsonFile" : "directory-Timer-Debug-1cb7811f6aa9c3e37347.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.16"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 2,
+					"source" : "Timer",
+					"targetIndexes" : 
+					[
+						12,
+						13,
+						14
+					]
+				},
+				{
+					"build" : "Kanban",
+					"jsonFile" : "directory-Kanban-Debug-9296e87c5b18d451a877.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.16"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 3,
+					"source" : "Kanban",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2
+					]
+				},
+				{
+					"build" : "Reminder",
+					"jsonFile" : "directory-Reminder-Debug-729af422742fc47614a8.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.16"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 4,
+					"source" : "Reminder",
+					"targetIndexes" : 
+					[
+						3,
+						4,
+						5
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"childIndexes" : 
+					[
+						1,
+						2,
+						3,
+						4
+					],
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "TimeTracker",
+					"targetIndexes" : 
+					[
+						9,
+						10,
+						11
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						1
+					],
+					"name" : "StopWatch",
+					"parentIndex" : 0,
+					"targetIndexes" : 
+					[
+						6,
+						7,
+						8
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						2
+					],
+					"name" : "Timer",
+					"parentIndex" : 0,
+					"targetIndexes" : 
+					[
+						12,
+						13,
+						14
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						3
+					],
+					"name" : "Kanban",
+					"parentIndex" : 0,
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						4
+					],
+					"name" : "Reminder",
+					"parentIndex" : 0,
+					"targetIndexes" : 
+					[
+						3,
+						4,
+						5
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 3,
+					"id" : "Kanban::@836d7fb0cc94a7e4c7ad",
+					"jsonFile" : "target-Kanban-Debug-14c896f9fa19e2e347cd.json",
+					"name" : "Kanban",
+					"projectIndex" : 3
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "Kanban_autogen::@836d7fb0cc94a7e4c7ad",
+					"jsonFile" : "target-Kanban_autogen-Debug-a3b0f6eee9e1b3c98b87.json",
+					"name" : "Kanban_autogen",
+					"projectIndex" : 3
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "Kanban_autogen_timestamp_deps::@836d7fb0cc94a7e4c7ad",
+					"jsonFile" : "target-Kanban_autogen_timestamp_deps-Debug-8f288409a4e39ffa0d97.json",
+					"name" : "Kanban_autogen_timestamp_deps",
+					"projectIndex" : 3
+				},
+				{
+					"directoryIndex" : 4,
+					"id" : "Reminder::@c3182ab9b142f0f3cbfd",
+					"jsonFile" : "target-Reminder-Debug-e86f32221ccdd940387e.json",
+					"name" : "Reminder",
+					"projectIndex" : 4
+				},
+				{
+					"directoryIndex" : 4,
+					"id" : "Reminder_autogen::@c3182ab9b142f0f3cbfd",
+					"jsonFile" : "target-Reminder_autogen-Debug-a9d24d9e314f7127869f.json",
+					"name" : "Reminder_autogen",
+					"projectIndex" : 4
+				},
+				{
+					"directoryIndex" : 4,
+					"id" : "Reminder_autogen_timestamp_deps::@c3182ab9b142f0f3cbfd",
+					"jsonFile" : "target-Reminder_autogen_timestamp_deps-Debug-26bea04746873314e4b1.json",
+					"name" : "Reminder_autogen_timestamp_deps",
+					"projectIndex" : 4
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "StopWatch::@bf892128820f1b5baac2",
+					"jsonFile" : "target-StopWatch-Debug-a72e5f0368efb67c161f.json",
+					"name" : "StopWatch",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "StopWatch_autogen::@bf892128820f1b5baac2",
+					"jsonFile" : "target-StopWatch_autogen-Debug-f560bd45a3dfcccfa158.json",
+					"name" : "StopWatch_autogen",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "StopWatch_autogen_timestamp_deps::@bf892128820f1b5baac2",
+					"jsonFile" : "target-StopWatch_autogen_timestamp_deps-Debug-aebea349b9d22eedf99d.json",
+					"name" : "StopWatch_autogen_timestamp_deps",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "TimeTracker::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-TimeTracker-Debug-09cff81e51db8d2f8ad9.json",
+					"name" : "TimeTracker",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "TimeTracker_autogen::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-TimeTracker_autogen-Debug-48a7ff4af0485b2f80dd.json",
+					"name" : "TimeTracker_autogen",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "TimeTracker_autogen_timestamp_deps::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-TimeTracker_autogen_timestamp_deps-Debug-8f218aa44c60c4bba83b.json",
+					"name" : "TimeTracker_autogen_timestamp_deps",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "Timer::@c0ec749ccf2d31a4281f",
+					"jsonFile" : "target-Timer-Debug-91953ffa87e4cfe4eff5.json",
+					"name" : "Timer",
+					"projectIndex" : 2
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "Timer_autogen::@c0ec749ccf2d31a4281f",
+					"jsonFile" : "target-Timer_autogen-Debug-29f481108eebf2e01214.json",
+					"name" : "Timer_autogen",
+					"projectIndex" : 2
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "Timer_autogen_timestamp_deps::@c0ec749ccf2d31a4281f",
+					"jsonFile" : "target-Timer_autogen_timestamp_deps-Debug-a66446c69bbb99676f98.json",
+					"name" : "Timer_autogen_timestamp_deps",
+					"projectIndex" : 2
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "C:/Users/SHIDO/TimeTrackerOnQt/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug",
+		"source" : "C:/Users/SHIDO/TimeTrackerOnQt"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 7
+	}
+}

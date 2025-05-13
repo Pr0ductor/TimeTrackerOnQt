@@ -12,8 +12,8 @@ set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 # Поиск Qt
-find_package(QT NAMES Qt6 Qt5 REQUIRED COMPONENTS Widgets)
-find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Widgets)
+find_package(QT NAMES Qt6 Qt5 REQUIRED COMPONENTS Widgets Multimedia)
+find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Widgets Multimedia)
 
 # Определение исходных файлов подпроекта
 set(TIMER_SOURCES
@@ -28,7 +28,10 @@ add_library(Timer STATIC ${TIMER_SOURCES}
     timeron.h timeron.cpp timeron.ui)
 
 # Связывание библиотеки с Qt
-target_link_libraries(Timer PRIVATE Qt${QT_VERSION_MAJOR}::Widgets)
+target_link_libraries(Timer PRIVATE
+    Qt${QT_VERSION_MAJOR}::Widgets
+    Qt${QT_VERSION_MAJOR}::Multimedia
+)
 
 target_include_directories(Timer PUBLIC
     ${CMAKE_SOURCE_DIR}/TimeTracker/  # Путь к заголовочным файлам TimeTracker
