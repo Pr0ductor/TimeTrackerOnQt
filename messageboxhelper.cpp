@@ -1,4 +1,3 @@
-// Utils/MessageBoxHelper.cpp
 
 #include "messageboxhelper.h"
 
