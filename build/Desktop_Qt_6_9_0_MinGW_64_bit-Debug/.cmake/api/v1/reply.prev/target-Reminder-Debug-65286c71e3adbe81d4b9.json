@@ -3,7 +3,7 @@
 	"artifacts" : 
 	[
 		{
-			"path" : "Timer/libTimer.a"
+			"path" : "Reminder/libReminder.a"
 		}
 	],
 	"backtrace" : 1,
@@ -16,7 +16,7 @@
 		],
 		"files" : 
 		[
-			"Timer/CMakeLists.txt"
+			"Reminder/CMakeLists.txt"
 		],
 		"nodes" : 
 		[
@@ -32,7 +32,7 @@
 			{
 				"command" : 1,
 				"file" : 0,
-				"line" : 31,
+				"line" : 30,
 				"parent" : 0
 			}
 		]
@@ -93,7 +93,7 @@
 			[
 				{
 					"backtrace" : 0,
-					"path" : "C:/Users/SHIDO/TimeTrackerOnQt/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/Timer/Timer_autogen/include"
+					"path" : "C:/Users/SHIDO/TimeTrackerOnQt/build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/Reminder/Reminder_autogen/include"
 				},
 				{
 					"backtrace" : 2,
@@ -135,28 +135,27 @@
 			[
 				0,
 				1,
-				6,
-				11
+				7
 			]
 		}
 	],
 	"dependencies" : 
 	[
 		{
-			"backtrace" : 0,
-			"id" : "Timer_autogen::@c0ec749ccf2d31a4281f"
+			"id" : "Reminder_autogen_timestamp_deps::@c3182ab9b142f0f3cbfd"
 		},
 		{
-			"id" : "Timer_autogen_timestamp_deps::@c0ec749ccf2d31a4281f"
+			"backtrace" : 0,
+			"id" : "Reminder_autogen::@c3182ab9b142f0f3cbfd"
 		}
 	],
-	"id" : "Timer::@c0ec749ccf2d31a4281f",
-	"name" : "Timer",
-	"nameOnDisk" : "libTimer.a",
+	"id" : "Reminder::@c3182ab9b142f0f3cbfd",
+	"name" : "Reminder",
+	"nameOnDisk" : "libReminder.a",
 	"paths" : 
 	{
-		"build" : "Timer",
-		"source" : "Timer"
+		"build" : "Reminder",
+		"source" : "Reminder"
 	},
 	"sourceGroups" : 
 	[
@@ -166,8 +165,7 @@
 			[
 				0,
 				1,
-				6,
-				11
+				7
 			]
 		},
 		{
@@ -175,17 +173,14 @@
 			"sourceIndexes" : 
 			[
 				2,
-				5,
-				8,
-				9
+				5
 			]
 		},
 		{
 			"name" : "Forms",
 			"sourceIndexes" : 
 			[
-				3,
-				7
+				3
 			]
 		},
 		{
@@ -199,15 +194,15 @@
 			"name" : "",
 			"sourceIndexes" : 
 			[
-				10
+				6
 			]
 		},
 		{
 			"name" : "CMake Rules",
 			"sourceIndexes" : 
 			[
-				12,
-				13
+				8,
+				9
 			]
 		}
 	],
@@ -217,81 +212,59 @@
 			"backtrace" : 0,
 			"compileGroupIndex" : 0,
 			"isGenerated" : true,
-			"path" : "build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/Timer/Timer_autogen/mocs_compilation.cpp",
+			"path" : "build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/Reminder/Reminder_autogen/mocs_compilation.cpp",
 			"sourceGroupIndex" : 0
 		},
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "Timer/timer.cpp",
+			"path" : "Reminder/reminder.cpp",
 			"sourceGroupIndex" : 0
 		},
 		{
 			"backtrace" : 1,
-			"path" : "Timer/timer.h",
+			"path" : "Reminder/reminder.h",
 			"sourceGroupIndex" : 1
 		},
 		{
 			"backtrace" : 1,
-			"path" : "Timer/timer.ui",
+			"path" : "Reminder/reminder.ui",
 			"sourceGroupIndex" : 2
 		},
 		{
 			"backtrace" : 1,
-			"path" : "Timer/Timer.qrc",
+			"path" : "Reminder/Reminder.qrc",
 			"sourceGroupIndex" : 3
 		},
 		{
-			"backtrace" : 1,
-			"path" : "Timer/timeron.h",
-			"sourceGroupIndex" : 1
-		},
-		{
-			"backtrace" : 1,
-			"compileGroupIndex" : 0,
-			"path" : "Timer/timeron.cpp",
-			"sourceGroupIndex" : 0
-		},
-		{
-			"backtrace" : 1,
-			"path" : "Timer/timeron.ui",
-			"sourceGroupIndex" : 2
-		},
-		{
 			"backtrace" : 0,
 			"isGenerated" : true,
-			"path" : "build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/Timer/Timer_autogen/include/ui_timer.h",
+			"path" : "build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/Reminder/Reminder_autogen/include/ui_reminder.h",
 			"sourceGroupIndex" : 1
 		},
 		{
 			"backtrace" : 0,
 			"isGenerated" : true,
-			"path" : "build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/Timer/Timer_autogen/include/ui_timeron.h",
-			"sourceGroupIndex" : 1
-		},
-		{
-			"backtrace" : 0,
-			"isGenerated" : true,
-			"path" : "build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/Timer/Timer_autogen/timestamp",
+			"path" : "build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/Reminder/Reminder_autogen/timestamp",
 			"sourceGroupIndex" : 4
 		},
 		{
 			"backtrace" : 0,
 			"compileGroupIndex" : 0,
 			"isGenerated" : true,
-			"path" : "build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/Timer/Timer_autogen/EWIEGA46WW/qrc_Timer.cpp",
+			"path" : "build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/Reminder/Reminder_autogen/EWIEGA46WW/qrc_Reminder.cpp",
 			"sourceGroupIndex" : 0
 		},
 		{
 			"backtrace" : 0,
 			"isGenerated" : true,
-			"path" : "build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/Timer/Timer_autogen/timestamp.rule",
+			"path" : "build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/Reminder/Reminder_autogen/timestamp.rule",
 			"sourceGroupIndex" : 5
 		},
 		{
 			"backtrace" : 0,
 			"isGenerated" : true,
-			"path" : "build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/Timer/Timer_autogen/EWIEGA46WW/qrc_Timer.cpp.rule",
+			"path" : "build/Desktop_Qt_6_9_0_MinGW_64_bit-Debug/Reminder/Reminder_autogen/EWIEGA46WW/qrc_Reminder.cpp.rule",
 			"sourceGroupIndex" : 5
 		}
 	],

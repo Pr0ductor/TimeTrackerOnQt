@@ -376,6 +376,8 @@ C:/Users/SHIDO/TimeTrackerOnQt/Timer/timer.h
 C:/Users/SHIDO/TimeTrackerOnQt/Timer/timeron.h
  mmc:Q_OBJECT
  mdp:C:/Qt/6.9.0/mingw_64/include/QtCore/QString
+ mdp:C:/Qt/6.9.0/mingw_64/include/QtCore/QTime
+ mdp:C:/Qt/6.9.0/mingw_64/include/QtCore/QTimer
  mdp:C:/Qt/6.9.0/mingw_64/include/QtCore/q17memory.h
  mdp:C:/Qt/6.9.0/mingw_64/include/QtCore/q20functional.h
  mdp:C:/Qt/6.9.0/mingw_64/include/QtCore/q20iterator.h
@@ -383,6 +385,7 @@ C:/Users/SHIDO/TimeTrackerOnQt/Timer/timeron.h
  mdp:C:/Qt/6.9.0/mingw_64/include/QtCore/q20type_traits.h
  mdp:C:/Qt/6.9.0/mingw_64/include/QtCore/q20utility.h
  mdp:C:/Qt/6.9.0/mingw_64/include/QtCore/q23utility.h
+ mdp:C:/Qt/6.9.0/mingw_64/include/QtCore/qabstracteventdispatcher.h
  mdp:C:/Qt/6.9.0/mingw_64/include/QtCore/qalgorithms.h
  mdp:C:/Qt/6.9.0/mingw_64/include/QtCore/qanystringview.h
  mdp:C:/Qt/6.9.0/mingw_64/include/QtCore/qarraydata.h
@@ -392,11 +395,13 @@ C:/Users/SHIDO/TimeTrackerOnQt/Timer/timeron.h
  mdp:C:/Qt/6.9.0/mingw_64/include/QtCore/qatomic.h
  mdp:C:/Qt/6.9.0/mingw_64/include/QtCore/qatomic_cxx11.h
  mdp:C:/Qt/6.9.0/mingw_64/include/QtCore/qbasicatomic.h
+ mdp:C:/Qt/6.9.0/mingw_64/include/QtCore/qbasictimer.h
  mdp:C:/Qt/6.9.0/mingw_64/include/QtCore/qbindingstorage.h
  mdp:C:/Qt/6.9.0/mingw_64/include/QtCore/qbytearray.h
  mdp:C:/Qt/6.9.0/mingw_64/include/QtCore/qbytearrayalgorithms.h
  mdp:C:/Qt/6.9.0/mingw_64/include/QtCore/qbytearraylist.h
  mdp:C:/Qt/6.9.0/mingw_64/include/QtCore/qbytearrayview.h
+ mdp:C:/Qt/6.9.0/mingw_64/include/QtCore/qcalendar.h
  mdp:C:/Qt/6.9.0/mingw_64/include/QtCore/qchar.h
  mdp:C:/Qt/6.9.0/mingw_64/include/QtCore/qcompare.h
  mdp:C:/Qt/6.9.0/mingw_64/include/QtCore/qcompare_impl.h
@@ -410,8 +415,12 @@ C:/Users/SHIDO/TimeTrackerOnQt/Timer/timeron.h
  mdp:C:/Qt/6.9.0/mingw_64/include/QtCore/qcontiguouscache.h
  mdp:C:/Qt/6.9.0/mingw_64/include/QtCore/qdarwinhelpers.h
  mdp:C:/Qt/6.9.0/mingw_64/include/QtCore/qdatastream.h
+ mdp:C:/Qt/6.9.0/mingw_64/include/QtCore/qdatetime.h
+ mdp:C:/Qt/6.9.0/mingw_64/include/QtCore/qdeadlinetimer.h
  mdp:C:/Qt/6.9.0/mingw_64/include/QtCore/qdebug.h
+ mdp:C:/Qt/6.9.0/mingw_64/include/QtCore/qelapsedtimer.h
  mdp:C:/Qt/6.9.0/mingw_64/include/QtCore/qendian.h
+ mdp:C:/Qt/6.9.0/mingw_64/include/QtCore/qeventloop.h
  mdp:C:/Qt/6.9.0/mingw_64/include/QtCore/qexceptionhandling.h
  mdp:C:/Qt/6.9.0/mingw_64/include/QtCore/qflags.h
  mdp:C:/Qt/6.9.0/mingw_64/include/QtCore/qfloat16.h
@@ -429,6 +438,7 @@ C:/Users/SHIDO/TimeTrackerOnQt/Timer/timeron.h
  mdp:C:/Qt/6.9.0/mingw_64/include/QtCore/qlatin1stringview.h
  mdp:C:/Qt/6.9.0/mingw_64/include/QtCore/qline.h
  mdp:C:/Qt/6.9.0/mingw_64/include/QtCore/qlist.h
+ mdp:C:/Qt/6.9.0/mingw_64/include/QtCore/qlocale.h
  mdp:C:/Qt/6.9.0/mingw_64/include/QtCore/qlogging.h
  mdp:C:/Qt/6.9.0/mingw_64/include/QtCore/qmalloc.h
  mdp:C:/Qt/6.9.0/mingw_64/include/QtCore/qmap.h
@@ -485,6 +495,7 @@ C:/Users/SHIDO/TimeTrackerOnQt/Timer/timeron.h
  mdp:C:/Qt/6.9.0/mingw_64/include/QtCore/qtenvironmentvariables.h
  mdp:C:/Qt/6.9.0/mingw_64/include/QtCore/qtextstream.h
  mdp:C:/Qt/6.9.0/mingw_64/include/QtCore/qtformat_impl.h
+ mdp:C:/Qt/6.9.0/mingw_64/include/QtCore/qtimer.h
  mdp:C:/Qt/6.9.0/mingw_64/include/QtCore/qtmetamacros.h
  mdp:C:/Qt/6.9.0/mingw_64/include/QtCore/qtnoop.h
  mdp:C:/Qt/6.9.0/mingw_64/include/QtCore/qtpreprocessorsupport.h

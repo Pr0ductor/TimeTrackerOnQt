@@ -36,7 +36,9 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
         Reminder/Reminder.qrc
         Timer/Timer.qrc
         messageboxhelper.h
-        messageboxhelper.cpp
+        messageboxhelper.h
+        messageboxhelper.h messageboxhelper.cpp
+
 
     )
 else()

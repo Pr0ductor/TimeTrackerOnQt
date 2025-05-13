@@ -14,7 +14,7 @@
 						4
 					],
 					"hasInstallRule" : true,
-					"jsonFile" : "directory-.-Debug-a9c22f1ab31aa6191b31.json",
+					"jsonFile" : "directory-.-Debug-4a2185d098fe398e9075.json",
 					"minimumCMakeVersion" : 
 					{
 						"string" : "3.16"
@@ -182,7 +182,7 @@
 				{
 					"directoryIndex" : 3,
 					"id" : "Kanban::@836d7fb0cc94a7e4c7ad",
-					"jsonFile" : "target-Kanban-Debug-14c896f9fa19e2e347cd.json",
+					"jsonFile" : "target-Kanban-Debug-4a2edeb3ab6a742627bc.json",
 					"name" : "Kanban",
 					"projectIndex" : 3
 				},
@@ -203,7 +203,7 @@
 				{
 					"directoryIndex" : 4,
 					"id" : "Reminder::@c3182ab9b142f0f3cbfd",
-					"jsonFile" : "target-Reminder-Debug-e86f32221ccdd940387e.json",
+					"jsonFile" : "target-Reminder-Debug-65286c71e3adbe81d4b9.json",
 					"name" : "Reminder",
 					"projectIndex" : 4
 				},
@@ -245,7 +245,7 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "TimeTracker::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-TimeTracker-Debug-5863700ec17722939ccc.json",
+					"jsonFile" : "target-TimeTracker-Debug-1a0ac501f64fc024c630.json",
 					"name" : "TimeTracker",
 					"projectIndex" : 0
 				},
@@ -266,7 +266,7 @@
 				{
 					"directoryIndex" : 2,
 					"id" : "Timer::@c0ec749ccf2d31a4281f",
-					"jsonFile" : "target-Timer-Debug-f8d950f0de3ec73a5b7e.json",
+					"jsonFile" : "target-Timer-Debug-2bc0e2665a6a49847e33.json",
 					"name" : "Timer",
 					"projectIndex" : 2
 				},

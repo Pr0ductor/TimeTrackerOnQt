@@ -3,6 +3,8 @@
 
 #include <QWidget>
 #include <QString>
+#include <QTimer>
+#include <QTime>
 
 namespace Ui {
 class TimerOn;
@@ -18,9 +20,13 @@ public:
 
 private slots:
     void onStopButtonClicked();
+    void updateTimer();
 
 private:
     Ui::TimerOn *ui;
+
+    QTimer *timer;
+    QTime remainingTime;
 };
 
 #endif // TIMERON_H

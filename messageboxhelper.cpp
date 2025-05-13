@@ -1,12 +1,13 @@
-
 #include "messageboxhelper.h"
 
 void MessageBoxHelper::showMessage(QWidget *parent, MessageType type, const QString &title, const QString &text) {
     QMessageBox msgBox(parent);
 
+    // Настройка заголовка и текста
     msgBox.setWindowTitle(title);
     msgBox.setText(text);
 
+    // Настройка типа сообщения
     switch (type) {
     case Info:
         msgBox.setIcon(QMessageBox::Information);
@@ -26,6 +27,7 @@ void MessageBoxHelper::showMessage(QWidget *parent, MessageType type, const QStr
         break;
     }
 
+    // Настройка стиля (опционально)
     msgBox.setStyleSheet(R"(
         QMessageBox {
             background-color: #d9d9d9;
@@ -45,5 +47,6 @@ void MessageBoxHelper::showMessage(QWidget *parent, MessageType type, const QStr
         }
     )");
 
+    // Отображение окна
     msgBox.exec();
 }

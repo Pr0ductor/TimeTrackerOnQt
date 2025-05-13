@@ -14,6 +14,7 @@ public:
         Question    // Вопрос (с кнопками "Да" и "Нет")
     };
 
+    // Универсальный метод для отображения сообщений
     static void showMessage(QWidget *parent, MessageType type, const QString &title, const QString &text);
 };
 
