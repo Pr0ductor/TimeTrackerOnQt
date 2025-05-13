@@ -39,24 +39,18 @@ void Timer::onStartButtonClicked()
         return;
     }
 
-    // Получаем значение Description
-    QString description = ui->Description->toPlainText().trimmed(); // Убираем лишние пробелы
+    QString description = ui->Description->toPlainText().trimmed(); 
 
-    // Если Description пустой, используем сообщение по умолчанию
     if (description.isEmpty()) {
         description = "Эх... щас бы в бильярд... шары покатать...";
     }
 
-    // Получаем значение TimeMain
     QString timeMain = selectedTime.toString("hh:mm:ss");
 
-    // Создаем объект TimerOn, передавая значения Description и TimeMain
     TimerOn *timerOn = new TimerOn(description, timeMain);
 
-    // Показываем вторую форму
     timerOn->show();
 
-    // Закрываем текущую форму
     this->close();
 }
 
