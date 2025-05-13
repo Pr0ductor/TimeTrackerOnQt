@@ -8,9 +8,8 @@ TimerOn::TimerOn(const QString &description, const QString &timeMain, QWidget *p
 {
     ui->setupUi(this);
 
-    // Устанавливаем переданные значения в виджеты
-    ui->Description->setText(description); // Установка описания
-    ui->TimerMain->setText(timeMain);     // Установка времени
+    ui->Description->setText(description); 
+    ui->TimerMain->setText(timeMain);     
 
     connect(ui->StopButtonOnTimerOn, &QPushButton::clicked, this, &TimerOn::onStopButtonClicked);
 }
