@@ -14,6 +14,13 @@ Timer::Timer(QWidget *parent)
     ui->setupUi(this);
 
     connect(ui->StartButtonOnTimer, &QPushButton::clicked, this, &Timer::onStartButtonClicked);
+
+    connect(ui->Timer1mButton, &QPushButton::clicked, this, &Timer::on_TimerButton_clicked);
+    connect(ui->Timer5mButton, &QPushButton::clicked, this, &Timer::on_TimerButton_clicked);
+    connect(ui->Timer10mButton, &QPushButton::clicked, this, &Timer::on_TimerButton_clicked);
+    connect(ui->Timer15mButton, &QPushButton::clicked, this, &Timer::on_TimerButton_clicked);
+    connect(ui->Timer30mButton, &QPushButton::clicked, this, &Timer::on_TimerButton_clicked);
+    connect(ui->Timer60mButton, &QPushButton::clicked, this, &Timer::on_TimerButton_clicked);
 }
 
 Timer::~Timer()
@@ -61,4 +68,43 @@ void Timer::onStartButtonClicked()
 void Timer::on_Select_Time_userTimeChanged(const QTime &time)
 {
     ui->TimerMain->setText(time.toString("hh:mm:ss"));
+}
+
+void Timer::on_TimerButton_clicked()
+{
+    // Определяем, какая кнопка была нажата
+    QPushButton *button = qobject_cast<QPushButton*>(sender());
+    if (!button) {
+        qDebug() << "Ошибка: не удалось определить кнопку.";
+        return;
+    }
+
+    // Проверяем, что кнопка относится к группе таймеров
+    QString buttonName = button->objectName();
+    if (!buttonName.startsWith("Timer")) {
+        qDebug() << "Эта кнопка не относится к таймерам:" << buttonName;
+        return;
+    }
+
+    // Находим дочерний QLabel внутри кнопки
+    QLabel *label = button->findChild<QLabel*>();
+    if (!label) {
+        qDebug() << "Ошибка: не найден дочерний QLabel для кнопки" << buttonName;
+        return;
+    }
+
+    // Получаем текст из QLabel
+    QString timeText = label->text();
+    qDebug() << "Текст времени из QLabel:" << timeText;
+
+    // Преобразуем текст в QTime
+    QTime selectedTime = QTime::fromString(timeText, "hh:mm:ss");
+    if (!selectedTime.isValid()) {
+        qDebug() << "Ошибка: неверный формат времени в QLabel:" << timeText;
+        return;
+    }
+
+    // Устанавливаем время в Select_Time
+    ui->Select_Time->setTime(selectedTime);
+    qDebug() << "Установлено время:" << selectedTime.toString("hh:mm:ss");
 }

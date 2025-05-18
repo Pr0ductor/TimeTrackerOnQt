@@ -23,6 +23,8 @@ private slots:
     void onStartButtonClicked();
 
     void on_Select_Time_userTimeChanged(const QTime &time);
+    void on_TimerButton_clicked();
+
 
 private:
     Ui::Timer *ui;

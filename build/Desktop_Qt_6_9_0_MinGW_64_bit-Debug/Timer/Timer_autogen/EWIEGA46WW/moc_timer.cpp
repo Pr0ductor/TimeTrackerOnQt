@@ -43,7 +43,8 @@ template <> constexpr inline auto Timer::qt_create_metaobjectdata<qt_meta_tag_ZN
         "",
         "onStartButtonClicked",
         "on_Select_Time_userTimeChanged",
-        "time"
+        "time",
+        "on_TimerButton_clicked"
     };
 
     QtMocHelpers::UintData qt_methods {
@@ -55,6 +56,8 @@ template <> constexpr inline auto Timer::qt_create_metaobjectdata<qt_meta_tag_ZN
         QtMocHelpers::SlotData<void(const QTime &)>(4, 2, QMC::AccessPrivate, QMetaType::Void, {{
             { QMetaType::QTime, 5 },
         }}),
+        // Slot 'on_TimerButton_clicked'
+        QtMocHelpers::SlotData<void()>(6, 2, QMC::AccessPrivate, QMetaType::Void),
     };
     QtMocHelpers::UintData qt_properties {
     };
@@ -81,6 +84,7 @@ void Timer::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void 
         case 0: _t->on_GoBackToMenu_clicked(); break;
         case 1: _t->onStartButtonClicked(); break;
         case 2: _t->on_Select_Time_userTimeChanged((*reinterpret_cast< std::add_pointer_t<QTime>>(_a[1]))); break;
+        case 3: _t->on_TimerButton_clicked(); break;
         default: ;
         }
     }
@@ -105,14 +109,14 @@ int Timer::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 3)
+        if (_id < 4)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 3;
+        _id -= 4;
     }
     if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 3)
+        if (_id < 4)
             *reinterpret_cast<QMetaType *>(_a[0]) = QMetaType();
-        _id -= 3;
+        _id -= 4;
     }
     return _id;
 }

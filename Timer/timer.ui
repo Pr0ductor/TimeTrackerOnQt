@@ -268,29 +268,6 @@ background-color: transparent; /* Прозрачный фон */
      <string>Add task that you want complete...</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="ApplyTimerOnTimer">
-    <property name="geometry">
-     <rect>
-      <x>1087</x>
-      <y>560</y>
-      <width>262</width>
-      <height>73</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">QPushButton {
-    background-color: #D9D9D9; /* Прозрачный фон */
-    border: none;                /* Убираем границы */
-    padding: 10px;              /* Отступы внутри */
-    color: black;               /* Цвет текста */
-    font-size: 46px;            /* Размер шрифта */
-    border-radius: 10px;        /* Затупленные углы */
-}</string>
-    </property>
-    <property name="text">
-     <string>Apply timer</string>
-    </property>
-   </widget>
    <widget class="QLabel" name="label_8">
     <property name="geometry">
      <rect>
@@ -375,7 +352,7 @@ border-top: 2px solid #3E828C; /* Зеленая верхняя граница *
       <string/>
      </property>
     </widget>
-    <widget class="QPushButton" name="pushButton_5">
+    <widget class="QPushButton" name="Timer1mButton">
      <property name="geometry">
       <rect>
        <x>30</x>
@@ -384,6 +361,9 @@ border-top: 2px solid #3E828C; /* Зеленая верхняя граница *
        <height>200</height>
       </rect>
      </property>
+     <property name="focusPolicy">
+      <enum>Qt::FocusPolicy::ClickFocus</enum>
+     </property>
      <property name="styleSheet">
       <string notr="true">QPushButton {
     background-color: #565555;         /* Цвет внешнего фона */
@@ -398,49 +378,77 @@ QPushButton:hover {
     background-color: #4CA8B7;        /* Цвет при наведении курсора */
 }</string>
      </property>
+     <property name="inputMethodHints">
+      <set>Qt::InputMethodHint::ImhNone</set>
+     </property>
      <property name="text">
       <string/>
      </property>
-    </widget>
-    <widget class="QLabel" name="label_16">
-     <property name="geometry">
-      <rect>
-       <x>50</x>
-       <y>50</y>
-       <width>157</width>
-       <height>157</height>
-      </rect>
-     </property>
-     <property name="font">
-      <font>
-       <pointsize>-1</pointsize>
-       <bold>true</bold>
-      </font>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">background-color: #3E828C;         /* Цвет внутреннего круга */
+     <widget class="QLabel" name="Timer1mLabel">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>20</y>
+        <width>157</width>
+        <height>157</height>
+       </rect>
+      </property>
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>-1</pointsize>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="contextMenuPolicy">
+       <enum>Qt::ContextMenuPolicy::DefaultContextMenu</enum>
+      </property>
+      <property name="toolTip">
+       <string/>
+      </property>
+      <property name="toolTipDuration">
+       <number>-1</number>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: #3E828C;         /* Цвет внутреннего круга */
 border-radius: 75%;               /* Круглый фон */
 padding: 10px;                    /* Отступы внутри */
 color: white;                     /* Белый цвет текста */
 font-size: 30px;                  /* Размер шрифта времени */
-font-weight: bold;                /* Жирный шрифт */</string>
-     </property>
-     <property name="text">
-      <string>10:00</string>
-     </property>
-     <property name="alignment">
-      <set>Qt::AlignmentFlag::AlignCenter</set>
-     </property>
+font-weight: bold;                /* Жирный шрифт */
+z-index: 1;</string>
+      </property>
+      <property name="inputMethodHints">
+       <set>Qt::InputMethodHint::ImhNone</set>
+      </property>
+      <property name="text">
+       <string>00:01:00</string>
+      </property>
+      <property name="textFormat">
+       <enum>Qt::TextFormat::AutoText</enum>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignmentFlag::AlignCenter</set>
+      </property>
+     </widget>
     </widget>
-    <widget class="QPushButton" name="pushButton_6">
+    <widget class="QPushButton" name="Timer5mButton">
      <property name="geometry">
       <rect>
-       <x>310</x>
+       <x>280</x>
        <y>30</y>
        <width>200</width>
        <height>200</height>
       </rect>
      </property>
+     <property name="focusPolicy">
+      <enum>Qt::FocusPolicy::ClickFocus</enum>
+     </property>
      <property name="styleSheet">
       <string notr="true">QPushButton {
     background-color: #565555;         /* Цвет внешнего фона */
@@ -455,19 +463,77 @@ QPushButton:hover {
     background-color: #4CA8B7;        /* Цвет при наведении курсора */
 }</string>
      </property>
+     <property name="inputMethodHints">
+      <set>Qt::InputMethodHint::ImhNone</set>
+     </property>
      <property name="text">
       <string/>
      </property>
+     <widget class="QLabel" name="Timer5mLabel">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>20</y>
+        <width>157</width>
+        <height>157</height>
+       </rect>
+      </property>
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>-1</pointsize>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="contextMenuPolicy">
+       <enum>Qt::ContextMenuPolicy::DefaultContextMenu</enum>
+      </property>
+      <property name="toolTip">
+       <string/>
+      </property>
+      <property name="toolTipDuration">
+       <number>-1</number>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: #3E828C;         /* Цвет внутреннего круга */
+border-radius: 75%;               /* Круглый фон */
+padding: 10px;                    /* Отступы внутри */
+color: white;                     /* Белый цвет текста */
+font-size: 30px;                  /* Размер шрифта времени */
+font-weight: bold;                /* Жирный шрифт */
+z-index: 1;</string>
+      </property>
+      <property name="inputMethodHints">
+       <set>Qt::InputMethodHint::ImhNone</set>
+      </property>
+      <property name="text">
+       <string>00:05:00</string>
+      </property>
+      <property name="textFormat">
+       <enum>Qt::TextFormat::AutoText</enum>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignmentFlag::AlignCenter</set>
+      </property>
+     </widget>
     </widget>
-    <widget class="QPushButton" name="pushButton_7">
+    <widget class="QPushButton" name="Timer10mButton">
      <property name="geometry">
       <rect>
-       <x>580</x>
+       <x>530</x>
        <y>30</y>
        <width>200</width>
        <height>200</height>
       </rect>
      </property>
+     <property name="focusPolicy">
+      <enum>Qt::FocusPolicy::ClickFocus</enum>
+     </property>
      <property name="styleSheet">
       <string notr="true">QPushButton {
     background-color: #565555;         /* Цвет внешнего фона */
@@ -482,90 +548,340 @@ QPushButton:hover {
     background-color: #4CA8B7;        /* Цвет при наведении курсора */
 }</string>
      </property>
+     <property name="inputMethodHints">
+      <set>Qt::InputMethodHint::ImhNone</set>
+     </property>
      <property name="text">
       <string/>
      </property>
-    </widget>
-    <widget class="QLabel" name="label_17">
-     <property name="geometry">
-      <rect>
-       <x>330</x>
-       <y>50</y>
-       <width>157</width>
-       <height>157</height>
-      </rect>
-     </property>
-     <property name="font">
-      <font>
-       <pointsize>-1</pointsize>
-       <bold>true</bold>
-      </font>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">background-color: #3E828C;         /* Цвет внутреннего круга */
+     <widget class="QLabel" name="Timer10mLabel">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>20</y>
+        <width>157</width>
+        <height>157</height>
+       </rect>
+      </property>
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>-1</pointsize>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="contextMenuPolicy">
+       <enum>Qt::ContextMenuPolicy::DefaultContextMenu</enum>
+      </property>
+      <property name="toolTip">
+       <string/>
+      </property>
+      <property name="toolTipDuration">
+       <number>-1</number>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: #3E828C;         /* Цвет внутреннего круга */
 border-radius: 75%;               /* Круглый фон */
 padding: 10px;                    /* Отступы внутри */
 color: white;                     /* Белый цвет текста */
 font-size: 30px;                  /* Размер шрифта времени */
-font-weight: bold;                /* Жирный шрифт */</string>
-     </property>
-     <property name="text">
-      <string>10:00</string>
-     </property>
-     <property name="alignment">
-      <set>Qt::AlignmentFlag::AlignCenter</set>
-     </property>
+font-weight: bold;                /* Жирный шрифт */
+z-index: 1;</string>
+      </property>
+      <property name="inputMethodHints">
+       <set>Qt::InputMethodHint::ImhNone</set>
+      </property>
+      <property name="text">
+       <string>00:10:00</string>
+      </property>
+      <property name="textFormat">
+       <enum>Qt::TextFormat::AutoText</enum>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignmentFlag::AlignCenter</set>
+      </property>
+     </widget>
     </widget>
-    <widget class="QLabel" name="label_18">
+    <widget class="QPushButton" name="Timer15mButton">
      <property name="geometry">
       <rect>
-       <x>600</x>
-       <y>50</y>
-       <width>157</width>
-       <height>157</height>
+       <x>780</x>
+       <y>30</y>
+       <width>200</width>
+       <height>200</height>
       </rect>
      </property>
-     <property name="font">
-      <font>
-       <pointsize>-1</pointsize>
-       <bold>true</bold>
-      </font>
+     <property name="focusPolicy">
+      <enum>Qt::FocusPolicy::ClickFocus</enum>
      </property>
      <property name="styleSheet">
-      <string notr="true">background-color: #3E828C;         /* Цвет внутреннего круга */
+      <string notr="true">QPushButton {
+    background-color: #565555;         /* Цвет внешнего фона */
+    border-radius: 10px;               /* Затупленные углы */
+    padding: 10px;                    /* Отступы внутри */
+    color: white;                     /* Белый цвет текста */
+    font-size: 18px;                  /* Размер шрифта времени */
+    font-weight: bold;                /* Жирный шрифт */
+}
+
+QPushButton:hover {
+    background-color: #4CA8B7;        /* Цвет при наведении курсора */
+}</string>
+     </property>
+     <property name="inputMethodHints">
+      <set>Qt::InputMethodHint::ImhNone</set>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <widget class="QLabel" name="Timer15mLabel">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>20</y>
+        <width>157</width>
+        <height>157</height>
+       </rect>
+      </property>
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>-1</pointsize>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="contextMenuPolicy">
+       <enum>Qt::ContextMenuPolicy::DefaultContextMenu</enum>
+      </property>
+      <property name="toolTip">
+       <string/>
+      </property>
+      <property name="toolTipDuration">
+       <number>-1</number>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: #3E828C;         /* Цвет внутреннего круга */
 border-radius: 75%;               /* Круглый фон */
 padding: 10px;                    /* Отступы внутри */
 color: white;                     /* Белый цвет текста */
 font-size: 30px;                  /* Размер шрифта времени */
-font-weight: bold;                /* Жирный шрифт */</string>
+font-weight: bold;                /* Жирный шрифт */
+z-index: 1;</string>
+      </property>
+      <property name="inputMethodHints">
+       <set>Qt::InputMethodHint::ImhNone</set>
+      </property>
+      <property name="text">
+       <string>00:15:00</string>
+      </property>
+      <property name="textFormat">
+       <enum>Qt::TextFormat::AutoText</enum>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignmentFlag::AlignCenter</set>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QPushButton" name="Timer30mButton">
+     <property name="geometry">
+      <rect>
+       <x>1020</x>
+       <y>30</y>
+       <width>200</width>
+       <height>200</height>
+      </rect>
+     </property>
+     <property name="focusPolicy">
+      <enum>Qt::FocusPolicy::ClickFocus</enum>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton {
+    background-color: #565555;         /* Цвет внешнего фона */
+    border-radius: 10px;               /* Затупленные углы */
+    padding: 10px;                    /* Отступы внутри */
+    color: white;                     /* Белый цвет текста */
+    font-size: 18px;                  /* Размер шрифта времени */
+    font-weight: bold;                /* Жирный шрифт */
+}
+
+QPushButton:hover {
+    background-color: #4CA8B7;        /* Цвет при наведении курсора */
+}</string>
+     </property>
+     <property name="inputMethodHints">
+      <set>Qt::InputMethodHint::ImhNone</set>
      </property>
      <property name="text">
-      <string>10:00</string>
+      <string/>
      </property>
-     <property name="alignment">
-      <set>Qt::AlignmentFlag::AlignCenter</set>
+     <widget class="QLabel" name="Timer30mLabel">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>20</y>
+        <width>157</width>
+        <height>157</height>
+       </rect>
+      </property>
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>-1</pointsize>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="contextMenuPolicy">
+       <enum>Qt::ContextMenuPolicy::DefaultContextMenu</enum>
+      </property>
+      <property name="toolTip">
+       <string/>
+      </property>
+      <property name="toolTipDuration">
+       <number>-1</number>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: #3E828C;         /* Цвет внутреннего круга */
+border-radius: 75%;               /* Круглый фон */
+padding: 10px;                    /* Отступы внутри */
+color: white;                     /* Белый цвет текста */
+font-size: 30px;                  /* Размер шрифта времени */
+font-weight: bold;                /* Жирный шрифт */
+z-index: 1;</string>
+      </property>
+      <property name="inputMethodHints">
+       <set>Qt::InputMethodHint::ImhNone</set>
+      </property>
+      <property name="text">
+       <string>00:30:00</string>
+      </property>
+      <property name="textFormat">
+       <enum>Qt::TextFormat::AutoText</enum>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignmentFlag::AlignCenter</set>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QPushButton" name="Timer60mButton">
+     <property name="geometry">
+      <rect>
+       <x>1260</x>
+       <y>30</y>
+       <width>200</width>
+       <height>200</height>
+      </rect>
      </property>
+     <property name="focusPolicy">
+      <enum>Qt::FocusPolicy::ClickFocus</enum>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton {
+    background-color: #565555;         /* Цвет внешнего фона */
+    border-radius: 10px;               /* Затупленные углы */
+    padding: 10px;                    /* Отступы внутри */
+    color: white;                     /* Белый цвет текста */
+    font-size: 18px;                  /* Размер шрифта времени */
+    font-weight: bold;                /* Жирный шрифт */
+}
+
+QPushButton:hover {
+    background-color: #4CA8B7;        /* Цвет при наведении курсора */
+}</string>
+     </property>
+     <property name="inputMethodHints">
+      <set>Qt::InputMethodHint::ImhNone</set>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <widget class="QLabel" name="Timer60hLabel">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>20</y>
+        <width>157</width>
+        <height>157</height>
+       </rect>
+      </property>
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>-1</pointsize>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="contextMenuPolicy">
+       <enum>Qt::ContextMenuPolicy::DefaultContextMenu</enum>
+      </property>
+      <property name="toolTip">
+       <string/>
+      </property>
+      <property name="toolTipDuration">
+       <number>-1</number>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: #3E828C;         /* Цвет внутреннего круга */
+border-radius: 75%;               /* Круглый фон */
+padding: 10px;                    /* Отступы внутри */
+color: white;                     /* Белый цвет текста */
+font-size: 30px;                  /* Размер шрифта времени */
+font-weight: bold;                /* Жирный шрифт */
+z-index: 1;</string>
+      </property>
+      <property name="inputMethodHints">
+       <set>Qt::InputMethodHint::ImhNone</set>
+      </property>
+      <property name="text">
+       <string>01:00:00</string>
+      </property>
+      <property name="textFormat">
+       <enum>Qt::TextFormat::AutoText</enum>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignmentFlag::AlignCenter</set>
+      </property>
+     </widget>
     </widget>
    </widget>
    <widget class="QLabel" name="label_14">
     <property name="geometry">
      <rect>
       <x>0</x>
-      <y>600</y>
-      <width>384</width>
-      <height>77</height>
+      <y>616</y>
+      <width>381</width>
+      <height>61</height>
      </rect>
     </property>
     <property name="font">
      <font>
-      <pointsize>28</pointsize>
+      <pointsize>24</pointsize>
      </font>
     </property>
     <property name="styleSheet">
      <string notr="true">color:black; background-color: transparent;</string>
     </property>
     <property name="text">
-     <string>Recent</string>
+     <string>Choose time</string>
     </property>
    </widget>
    <widget class="QLabel" name="label_3">
@@ -652,7 +968,7 @@ font-weight: bold;                /* Жирный шрифт */</string>
     </property>
     <property name="maximumDateTime">
      <datetime>
-      <hour>17</hour>
+      <hour>11</hour>
       <minute>59</minute>
       <second>59</second>
       <year>2000</year>
