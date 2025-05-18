@@ -26,7 +26,7 @@ public:
     QLabel *label_3;
     QLabel *TimerMain;
     QLabel *label_8;
-    QPushButton *DeclineButtonOnTimerOn;
+    QPushButton *PauseButtonOnTimerOn;
     QPushButton *StopButtonOnTimerOn;
     QLabel *label_4;
     QLabel *label_7;
@@ -91,10 +91,10 @@ public:
 "border-radius: 40px; /* \320\227\320\260\321\202\321\203\320\277\320\273\320\265\320\275\320\275\321\213\320\265 \321\203\320\263\320\273\321\213 */\n"
 "padding: 0; /* \320\236\321\202\321\201\321\202\321\203\320\277\321\213 */\n"
 "}"));
-        DeclineButtonOnTimerOn = new QPushButton(TimerOn);
-        DeclineButtonOnTimerOn->setObjectName("DeclineButtonOnTimerOn");
-        DeclineButtonOnTimerOn->setGeometry(QRect(450, 780, 256, 41));
-        DeclineButtonOnTimerOn->setStyleSheet(QString::fromUtf8("QPushButton {\n"
+        PauseButtonOnTimerOn = new QPushButton(TimerOn);
+        PauseButtonOnTimerOn->setObjectName("PauseButtonOnTimerOn");
+        PauseButtonOnTimerOn->setGeometry(QRect(450, 780, 256, 41));
+        PauseButtonOnTimerOn->setStyleSheet(QString::fromUtf8("QPushButton {\n"
 "    background-color: #D9D9D9; /* \320\246\320\262\320\265\321\202 \321\204\320\276\320\275\320\260 */\n"
 "    border-radius: 20px;      /* \320\227\320\260\321\202\321\203\320\277\320\273\320\265\320\275\320\275\321\213\320\265 \321\203\320\263\320\273\321\213 */\n"
 "    padding: 10px;           /* \320\236\321\202\321\201\321\202\321\203\320\277\321\213 \320\262\320\275\321\203\321\202\321\200\320\270 \320\272\320\275\320\276\320\277\320\272\320\270 */\n"
@@ -182,7 +182,7 @@ public:
         label_3->setText(QString());
         TimerMain->setText(QCoreApplication::translate("TimerOn", "00:00:00", nullptr));
         label_8->setText(QString());
-        DeclineButtonOnTimerOn->setText(QCoreApplication::translate("TimerOn", "Decline", nullptr));
+        PauseButtonOnTimerOn->setText(QCoreApplication::translate("TimerOn", "PAUSE", nullptr));
         StopButtonOnTimerOn->setText(QCoreApplication::translate("TimerOn", "STOP", nullptr));
         label_4->setText(QString());
         label_7->setText(QCoreApplication::translate("TimerOn", "wait for the timer to end", nullptr));

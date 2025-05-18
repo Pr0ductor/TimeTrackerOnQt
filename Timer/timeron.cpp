@@ -4,6 +4,7 @@
 #include <QMessageBox>
 #include "../../TimeTrackerOnQt/messageboxhelper.h"
 #include <QMediaPlayer>
+#include <QSoundEffect>
 #include <QUrl>
 
 TimerOn::TimerOn(const QString &description, const QString &timeMain, QWidget *parent)
@@ -25,6 +26,10 @@ TimerOn::TimerOn(const QString &description, const QString &timeMain, QWidget *p
     timer->start(1000);
 
     connect(ui->StopButtonOnTimerOn, &QPushButton::clicked, this, &TimerOn::onStopButtonClicked);
+
+    connect(ui->PauseButtonOnTimerOn, &QPushButton::clicked, this, &TimerOn::onPauseButtonClicked);
+    ui->PauseButtonOnTimerOn->setText("PAUSE");
+    isPaused = false;
 }
 
 TimerOn::~TimerOn()
@@ -38,17 +43,16 @@ void TimerOn::updateTimer()
 
     if (remainingTime == QTime(0, 0, 0)) {
         timer->stop();
-
+        QSoundEffect sound;
+        sound.setSource(QUrl("qrc:/Sounds/sound1.wav"));
+        sound.setVolume(1.0f);
+        sound.play();
         MessageBoxHelper::instance().showMessage(this, MessageBoxHelper::Info, "Таймер завершен", "Время истекло!");
 
         connect(&MessageBoxHelper::instance(), &MessageBoxHelper::finished, this, [this]() {
-            // Timer *timerWindow = new Timer();
-            // timerWindow->show();
-            // this->close();
+
         });
-        QMediaPlayer *player = new QMediaPlayer(this);
-        player->setSource(QUrl::fromLocalFile(":/Sounds/khi-khi-khi-kha.mp3"));
-        player->play();
+
         Timer *timerWindow = new Timer();
         timerWindow->show();
         this->close();
@@ -59,4 +63,17 @@ void TimerOn::onStopButtonClicked()
     Timer *timerWindow = new Timer();
     timerWindow->show();
     this->close();
+}
+
+void TimerOn::onPauseButtonClicked()
+{
+    if (isPaused) {
+        timer->start(1000);
+        ui->PauseButtonOnTimerOn->setText("PAUSE");
+        isPaused = false;
+    } else {
+        timer->stop();
+        ui->PauseButtonOnTimerOn->setText("RESUME");
+        isPaused = true;
+    }
 }

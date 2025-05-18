@@ -137,7 +137,7 @@ padding: 0; /* Отступы */
     <string/>
    </property>
   </widget>
-  <widget class="QPushButton" name="DeclineButtonOnTimerOn">
+  <widget class="QPushButton" name="PauseButtonOnTimerOn">
    <property name="geometry">
     <rect>
      <x>450</x>
@@ -156,7 +156,7 @@ padding: 0; /* Отступы */
 }</string>
    </property>
    <property name="text">
-    <string>Decline</string>
+    <string>PAUSE</string>
    </property>
   </widget>
   <widget class="QPushButton" name="StopButtonOnTimerOn">

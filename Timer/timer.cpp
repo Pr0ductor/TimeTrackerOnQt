@@ -4,6 +4,8 @@
 #include "timeron.h"
 #include <QMessageBox>
 #include "../../TimeTrackerOnQt/messageboxhelper.h"
+#include <QSoundEffect>
+#include <QUrl>
 
 Timer::Timer(QWidget *parent)
     : QMainWindow(parent)
@@ -33,7 +35,10 @@ void Timer::onStartButtonClicked()
     QTime selectedTime = ui->Select_Time->time();
 
     if (selectedTime == QTime(0, 0, 0)) {
-
+        QSoundEffect sound;
+        sound.setSource(QUrl("qrc:/Sounds/secretsound.wav"));
+        sound.setVolume(1.0f);
+        sound.play();
         MessageBoxHelper& helper = MessageBoxHelper::instance();
 
         helper.showMessage(this, MessageBoxHelper::Error, "Ошибка", "Вы не выбрали время! Пожалуйста, установите время.");

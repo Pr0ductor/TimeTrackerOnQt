@@ -21,12 +21,14 @@ public:
 private slots:
     void onStopButtonClicked();
     void updateTimer();
+    void onPauseButtonClicked();
 
 private:
     Ui::TimerOn *ui;
 
     QTimer *timer;
     QTime remainingTime;
+    bool isPaused;
 };
 
 #endif // TIMERON_H
