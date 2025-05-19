@@ -1,0 +1,28 @@
+{
+	"BUILD_DIR" : "/Users/overmann/Desktop/timetrack/TimeTrackerOnQt/build/Qt_6_9_0_for_macOS-Debug/Kanban/Kanban_autogen",
+	"CMAKE_BINARY_DIR" : "/Users/overmann/Desktop/timetrack/TimeTrackerOnQt/build/Qt_6_9_0_for_macOS-Debug",
+	"CMAKE_CURRENT_BINARY_DIR" : "/Users/overmann/Desktop/timetrack/TimeTrackerOnQt/build/Qt_6_9_0_for_macOS-Debug/Kanban",
+	"CMAKE_CURRENT_SOURCE_DIR" : "/Users/overmann/Desktop/timetrack/TimeTrackerOnQt/Kanban",
+	"CMAKE_SOURCE_DIR" : "/Users/overmann/Desktop/timetrack/TimeTrackerOnQt",
+	"CROSS_CONFIG" : false,
+	"GENERATOR" : "Ninja",
+	"INCLUDE_DIR" : "/Users/overmann/Desktop/timetrack/TimeTrackerOnQt/build/Qt_6_9_0_for_macOS-Debug/Kanban/Kanban_autogen/include",
+	"INPUTS" : 
+	[
+		"/Users/overmann/Desktop/timetrack/TimeTrackerOnQt/Kanban/Right Arrow.png",
+		"/Users/overmann/Desktop/timetrack/TimeTrackerOnQt/Kanban/Backmenu.png",
+		"/Users/overmann/Desktop/timetrack/TimeTrackerOnQt/Kanban/KanbanIcon.png",
+		"/Users/overmann/Desktop/timetrack/TimeTrackerOnQt/Kanban/Multiply.png"
+	],
+	"LOCK_FILE" : "/Users/overmann/Desktop/timetrack/TimeTrackerOnQt/build/Qt_6_9_0_for_macOS-Debug/Kanban/CMakeFiles/Kanban_autogen.dir/AutoRcc_Kanban_EWIEGA46WW_Lock.lock",
+	"MULTI_CONFIG" : false,
+	"OPTIONS" : [ "--no-zstd", "-name", "Kanban" ],
+	"OUTPUT_CHECKSUM" : "EWIEGA46WW",
+	"OUTPUT_NAME" : "qrc_Kanban.cpp",
+	"RCC_EXECUTABLE" : "/Users/overmann/Qt/6.9.0/macos/libexec/rcc",
+	"RCC_LIST_OPTIONS" : [ "--list" ],
+	"SETTINGS_FILE" : "/Users/overmann/Desktop/timetrack/TimeTrackerOnQt/build/Qt_6_9_0_for_macOS-Debug/Kanban/CMakeFiles/Kanban_autogen.dir/AutoRcc_Kanban_EWIEGA46WW_Used.txt",
+	"SOURCE" : "/Users/overmann/Desktop/timetrack/TimeTrackerOnQt/Kanban/Kanban.qrc",
+	"USE_BETTER_GRAPH" : true,
+	"VERBOSITY" : 0
+}
