@@ -1,0 +1,28 @@
+{
+	"BUILD_DIR" : "/Users/overmann/Desktop/timetrack/TimeTrackerOnQt/build/Qt_6_9_0_for_macOS-Debug/TimeTracker_autogen",
+	"CMAKE_BINARY_DIR" : "/Users/overmann/Desktop/timetrack/TimeTrackerOnQt/build/Qt_6_9_0_for_macOS-Debug",
+	"CMAKE_CURRENT_BINARY_DIR" : "/Users/overmann/Desktop/timetrack/TimeTrackerOnQt/build/Qt_6_9_0_for_macOS-Debug",
+	"CMAKE_CURRENT_SOURCE_DIR" : "/Users/overmann/Desktop/timetrack/TimeTrackerOnQt",
+	"CMAKE_SOURCE_DIR" : "/Users/overmann/Desktop/timetrack/TimeTrackerOnQt",
+	"CROSS_CONFIG" : false,
+	"GENERATOR" : "Ninja",
+	"INCLUDE_DIR" : "/Users/overmann/Desktop/timetrack/TimeTrackerOnQt/build/Qt_6_9_0_for_macOS-Debug/TimeTracker_autogen/include",
+	"INPUTS" : 
+	[
+		"/Users/overmann/Desktop/timetrack/TimeTrackerOnQt/Timer/timer.png",
+		"/Users/overmann/Desktop/timetrack/TimeTrackerOnQt/Timer/Ellipse 1.png",
+		"/Users/overmann/Desktop/timetrack/TimeTrackerOnQt/Timer/image 3.png",
+		"/Users/overmann/Desktop/timetrack/TimeTrackerOnQt/Timer/Backmenu.png"
+	],
+	"LOCK_FILE" : "/Users/overmann/Desktop/timetrack/TimeTrackerOnQt/build/Qt_6_9_0_for_macOS-Debug/CMakeFiles/TimeTracker_autogen.dir/AutoRcc_Timer_H3KQXJXU73_Lock.lock",
+	"MULTI_CONFIG" : false,
+	"OPTIONS" : [ "--no-zstd", "-name", "Timer" ],
+	"OUTPUT_CHECKSUM" : "H3KQXJXU73",
+	"OUTPUT_NAME" : "qrc_Timer.cpp",
+	"RCC_EXECUTABLE" : "/Users/overmann/Qt/6.9.0/macos/libexec/rcc",
+	"RCC_LIST_OPTIONS" : [ "--list" ],
+	"SETTINGS_FILE" : "/Users/overmann/Desktop/timetrack/TimeTrackerOnQt/build/Qt_6_9_0_for_macOS-Debug/CMakeFiles/TimeTracker_autogen.dir/AutoRcc_Timer_H3KQXJXU73_Used.txt",
+	"SOURCE" : "/Users/overmann/Desktop/timetrack/TimeTrackerOnQt/Timer/Timer.qrc",
+	"USE_BETTER_GRAPH" : true,
+	"VERBOSITY" : 0
+}
