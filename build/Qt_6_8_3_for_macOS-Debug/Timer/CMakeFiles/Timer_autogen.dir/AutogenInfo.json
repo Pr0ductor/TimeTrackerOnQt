@@ -1,13 +1,13 @@
 {
-	"BUILD_DIR" : "/Users/denis/QtProjects/FirstTest/build/Qt_6_8_3_for_macOS-Debug/Timer/Timer_autogen",
-	"CMAKE_BINARY_DIR" : "/Users/denis/QtProjects/FirstTest/build/Qt_6_8_3_for_macOS-Debug",
-	"CMAKE_CURRENT_BINARY_DIR" : "/Users/denis/QtProjects/FirstTest/build/Qt_6_8_3_for_macOS-Debug/Timer",
-	"CMAKE_CURRENT_SOURCE_DIR" : "/Users/denis/QtProjects/FirstTest/Timer",
+	"BUILD_DIR" : "/Users/denis/QtProjects/TimeTrackerOnQt/build/Qt_6_8_3_for_macOS-Debug/Timer/Timer_autogen",
+	"CMAKE_BINARY_DIR" : "/Users/denis/QtProjects/TimeTrackerOnQt/build/Qt_6_8_3_for_macOS-Debug",
+	"CMAKE_CURRENT_BINARY_DIR" : "/Users/denis/QtProjects/TimeTrackerOnQt/build/Qt_6_8_3_for_macOS-Debug/Timer",
+	"CMAKE_CURRENT_SOURCE_DIR" : "/Users/denis/QtProjects/TimeTrackerOnQt/Timer",
 	"CMAKE_EXECUTABLE" : "/Users/denis/Qt/Tools/CMake/CMake.app/Contents/bin/cmake",
 	"CMAKE_LIST_FILES" : 
 	[
-		"/Users/denis/QtProjects/FirstTest/Timer/CMakeLists.txt",
-		"/Users/denis/QtProjects/FirstTest/build/Qt_6_8_3_for_macOS-Debug/.qtc/package-manager/auto-setup.cmake",
+		"/Users/denis/QtProjects/TimeTrackerOnQt/Timer/CMakeLists.txt",
+		"/Users/denis/QtProjects/TimeTrackerOnQt/build/Qt_6_8_3_for_macOS-Debug/.qtc/package-manager/auto-setup.cmake",
 		"/Users/denis/Qt/6.8.3/macos/lib/cmake/Qt6/Qt6ConfigVersion.cmake",
 		"/Users/denis/Qt/6.8.3/macos/lib/cmake/Qt6/Qt6ConfigVersionImpl.cmake",
 		"/Users/denis/Qt/6.8.3/macos/lib/cmake/Qt6/Qt6Config.cmake",
@@ -85,25 +85,39 @@
 		"/Users/denis/Qt/6.8.3/macos/lib/cmake/Qt6/QtPublicToolHelpers.cmake",
 		"/Users/denis/Qt/6.8.3/macos/lib/cmake/Qt6/QtPublicWalkLibsHelpers.cmake",
 		"/Users/denis/Qt/Tools/CMake/CMake.app/Contents/share/cmake-3.30/Modules/CMakeFindDependencyMacro.cmake",
-		"/Users/denis/Qt/6.8.3/macos/lib/cmake/Qt6/Qt6Dependencies.cmake"
+		"/Users/denis/Qt/6.8.3/macos/lib/cmake/Qt6/Qt6Dependencies.cmake",
+		"/Users/denis/QtProjects/TimeTrackerOnQt/Timer/Timer.qrc"
 	],
-	"CMAKE_SOURCE_DIR" : "/Users/denis/QtProjects/FirstTest",
+	"CMAKE_SOURCE_DIR" : "/Users/denis/QtProjects/TimeTrackerOnQt",
 	"CROSS_CONFIG" : false,
-	"DEP_FILE" : "/Users/denis/QtProjects/FirstTest/build/Qt_6_8_3_for_macOS-Debug/Timer/Timer_autogen/deps",
+	"DEP_FILE" : "/Users/denis/QtProjects/TimeTrackerOnQt/build/Qt_6_8_3_for_macOS-Debug/Timer/Timer_autogen/deps",
 	"DEP_FILE_RULE_NAME" : "Timer_autogen/timestamp",
 	"HEADERS" : 
 	[
 		[
-			"/Users/denis/QtProjects/FirstTest/Timer/timer.h",
+			"/Users/denis/QtProjects/TimeTrackerOnQt/Timer/timer.h",
 			"MU",
 			"EWIEGA46WW/moc_timer.cpp",
+			null
+		],
+		[
+			"/Users/denis/QtProjects/TimeTrackerOnQt/Timer/timeron.h",
+			"MU",
+			"EWIEGA46WW/moc_timeron.cpp",
 			null
 		]
 	],
 	"HEADER_EXTENSIONS" : [ "h", "hh", "h++", "hm", "hpp", "hxx", "in", "txx" ],
-	"INCLUDE_DIR" : "/Users/denis/QtProjects/FirstTest/build/Qt_6_8_3_for_macOS-Debug/Timer/Timer_autogen/include",
-	"MOC_COMPILATION_FILE" : "/Users/denis/QtProjects/FirstTest/build/Qt_6_8_3_for_macOS-Debug/Timer/Timer_autogen/mocs_compilation.cpp",
-	"MOC_DEFINITIONS" : [ "QT_CORE_LIB", "QT_GUI_LIB", "QT_WIDGETS_LIB" ],
+	"INCLUDE_DIR" : "/Users/denis/QtProjects/TimeTrackerOnQt/build/Qt_6_8_3_for_macOS-Debug/Timer/Timer_autogen/include",
+	"MOC_COMPILATION_FILE" : "/Users/denis/QtProjects/TimeTrackerOnQt/build/Qt_6_8_3_for_macOS-Debug/Timer/Timer_autogen/mocs_compilation.cpp",
+	"MOC_DEFINITIONS" : 
+	[
+		"QT_CORE_LIB",
+		"QT_GUI_LIB",
+		"QT_MULTIMEDIA_LIB",
+		"QT_NETWORK_LIB",
+		"QT_WIDGETS_LIB"
+	],
 	"MOC_DEPEND_FILTERS" : 
 	[
 		[
@@ -113,6 +127,7 @@
 	],
 	"MOC_INCLUDES" : 
 	[
+		"/Users/denis/QtProjects/TimeTrackerOnQt/TimeTracker",
 		"/Users/denis/Qt/6.8.3/macos/lib/QtWidgets.framework/Headers",
 		"/Users/denis/Qt/6.8.3/macos/lib/QtWidgets.framework",
 		"/Users/denis/Qt/6.8.3/macos/lib/QtCore.framework/Headers",
@@ -121,9 +136,13 @@
 		"/Users/denis/Qt/6.8.3/macos/include",
 		"/Users/denis/Qt/6.8.3/macos/lib/QtGui.framework/Headers",
 		"/Users/denis/Qt/6.8.3/macos/lib/QtGui.framework",
-		"/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1",
-		"/Library/Developer/CommandLineTools/usr/lib/clang/15.0.0/include",
-		"/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include",
+		"/Users/denis/Qt/6.8.3/macos/lib/QtMultimedia.framework/Headers",
+		"/Users/denis/Qt/6.8.3/macos/lib/QtMultimedia.framework",
+		"/Users/denis/Qt/6.8.3/macos/lib/QtNetwork.framework/Headers",
+		"/Users/denis/Qt/6.8.3/macos/lib/QtNetwork.framework",
+		"/Library/Developer/CommandLineTools/SDKs/MacOSX15.4.sdk/usr/include/c++/v1",
+		"/Library/Developer/CommandLineTools/usr/lib/clang/17/include",
+		"/Library/Developer/CommandLineTools/SDKs/MacOSX15.4.sdk/usr/include",
 		"/Library/Developer/CommandLineTools/usr/include"
 	],
 	"MOC_MACRO_NAMES" : 
@@ -146,20 +165,25 @@
 		"-c",
 		"/Users/denis/Qt/Tools/CMake/CMake.app/Contents/share/cmake-3.30/Modules/CMakeCXXCompilerABI.cpp"
 	],
-	"MOC_PREDEFS_FILE" : "/Users/denis/QtProjects/FirstTest/build/Qt_6_8_3_for_macOS-Debug/Timer/Timer_autogen/moc_predefs.h",
+	"MOC_PREDEFS_FILE" : "/Users/denis/QtProjects/TimeTrackerOnQt/build/Qt_6_8_3_for_macOS-Debug/Timer/Timer_autogen/moc_predefs.h",
 	"MOC_RELAXED_MODE" : false,
 	"MOC_SKIP" : [],
 	"MULTI_CONFIG" : false,
 	"PARALLEL" : 8,
-	"PARSE_CACHE_FILE" : "/Users/denis/QtProjects/FirstTest/build/Qt_6_8_3_for_macOS-Debug/Timer/CMakeFiles/Timer_autogen.dir/ParseCache.txt",
+	"PARSE_CACHE_FILE" : "/Users/denis/QtProjects/TimeTrackerOnQt/build/Qt_6_8_3_for_macOS-Debug/Timer/CMakeFiles/Timer_autogen.dir/ParseCache.txt",
 	"QT_MOC_EXECUTABLE" : "/Users/denis/Qt/6.8.3/macos/libexec/moc",
 	"QT_UIC_EXECUTABLE" : "/Users/denis/Qt/6.8.3/macos/libexec/uic",
 	"QT_VERSION_MAJOR" : 6,
 	"QT_VERSION_MINOR" : 8,
-	"SETTINGS_FILE" : "/Users/denis/QtProjects/FirstTest/build/Qt_6_8_3_for_macOS-Debug/Timer/CMakeFiles/Timer_autogen.dir/AutogenUsed.txt",
+	"SETTINGS_FILE" : "/Users/denis/QtProjects/TimeTrackerOnQt/build/Qt_6_8_3_for_macOS-Debug/Timer/CMakeFiles/Timer_autogen.dir/AutogenUsed.txt",
 	"SOURCES" : 
 	[
-		[ "/Users/denis/QtProjects/FirstTest/Timer/timer.cpp", "MU", null ]
+		[ "/Users/denis/QtProjects/TimeTrackerOnQt/Timer/timer.cpp", "MU", null ],
+		[
+			"/Users/denis/QtProjects/TimeTrackerOnQt/Timer/timeron.cpp",
+			"MU",
+			null
+		]
 	],
 	"UIC_OPTIONS" : [],
 	"UIC_SEARCH_PATHS" : [],

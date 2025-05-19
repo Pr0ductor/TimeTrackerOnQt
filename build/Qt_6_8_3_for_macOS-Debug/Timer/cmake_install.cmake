@@ -1,4 +1,4 @@
-# Install script for directory: /Users/denis/QtProjects/FirstTest/Timer
+# Install script for directory: /Users/denis/QtProjects/TimeTrackerOnQt/Timer
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

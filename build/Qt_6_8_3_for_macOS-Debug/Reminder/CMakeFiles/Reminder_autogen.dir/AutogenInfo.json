@@ -1,13 +1,13 @@
 {
-	"BUILD_DIR" : "/Users/denis/QtProjects/FirstTest/build/Qt_6_8_3_for_macOS-Debug/Reminder/Reminder_autogen",
-	"CMAKE_BINARY_DIR" : "/Users/denis/QtProjects/FirstTest/build/Qt_6_8_3_for_macOS-Debug",
-	"CMAKE_CURRENT_BINARY_DIR" : "/Users/denis/QtProjects/FirstTest/build/Qt_6_8_3_for_macOS-Debug/Reminder",
-	"CMAKE_CURRENT_SOURCE_DIR" : "/Users/denis/QtProjects/FirstTest/Reminder",
+	"BUILD_DIR" : "/Users/denis/QtProjects/TimeTrackerOnQt/build/Qt_6_8_3_for_macOS-Debug/Reminder/Reminder_autogen",
+	"CMAKE_BINARY_DIR" : "/Users/denis/QtProjects/TimeTrackerOnQt/build/Qt_6_8_3_for_macOS-Debug",
+	"CMAKE_CURRENT_BINARY_DIR" : "/Users/denis/QtProjects/TimeTrackerOnQt/build/Qt_6_8_3_for_macOS-Debug/Reminder",
+	"CMAKE_CURRENT_SOURCE_DIR" : "/Users/denis/QtProjects/TimeTrackerOnQt/Reminder",
 	"CMAKE_EXECUTABLE" : "/Users/denis/Qt/Tools/CMake/CMake.app/Contents/bin/cmake",
 	"CMAKE_LIST_FILES" : 
 	[
-		"/Users/denis/QtProjects/FirstTest/Reminder/CMakeLists.txt",
-		"/Users/denis/QtProjects/FirstTest/build/Qt_6_8_3_for_macOS-Debug/.qtc/package-manager/auto-setup.cmake",
+		"/Users/denis/QtProjects/TimeTrackerOnQt/Reminder/CMakeLists.txt",
+		"/Users/denis/QtProjects/TimeTrackerOnQt/build/Qt_6_8_3_for_macOS-Debug/.qtc/package-manager/auto-setup.cmake",
 		"/Users/denis/Qt/6.8.3/macos/lib/cmake/Qt6/Qt6ConfigVersion.cmake",
 		"/Users/denis/Qt/6.8.3/macos/lib/cmake/Qt6/Qt6ConfigVersionImpl.cmake",
 		"/Users/denis/Qt/6.8.3/macos/lib/cmake/Qt6/Qt6Config.cmake",
@@ -85,24 +85,25 @@
 		"/Users/denis/Qt/6.8.3/macos/lib/cmake/Qt6/QtPublicToolHelpers.cmake",
 		"/Users/denis/Qt/6.8.3/macos/lib/cmake/Qt6/QtPublicWalkLibsHelpers.cmake",
 		"/Users/denis/Qt/Tools/CMake/CMake.app/Contents/share/cmake-3.30/Modules/CMakeFindDependencyMacro.cmake",
-		"/Users/denis/Qt/6.8.3/macos/lib/cmake/Qt6/Qt6Dependencies.cmake"
+		"/Users/denis/Qt/6.8.3/macos/lib/cmake/Qt6/Qt6Dependencies.cmake",
+		"/Users/denis/QtProjects/TimeTrackerOnQt/Reminder/Reminder.qrc"
 	],
-	"CMAKE_SOURCE_DIR" : "/Users/denis/QtProjects/FirstTest",
+	"CMAKE_SOURCE_DIR" : "/Users/denis/QtProjects/TimeTrackerOnQt",
 	"CROSS_CONFIG" : false,
-	"DEP_FILE" : "/Users/denis/QtProjects/FirstTest/build/Qt_6_8_3_for_macOS-Debug/Reminder/Reminder_autogen/deps",
+	"DEP_FILE" : "/Users/denis/QtProjects/TimeTrackerOnQt/build/Qt_6_8_3_for_macOS-Debug/Reminder/Reminder_autogen/deps",
 	"DEP_FILE_RULE_NAME" : "Reminder_autogen/timestamp",
 	"HEADERS" : 
 	[
 		[
-			"/Users/denis/QtProjects/FirstTest/Reminder/reminder.h",
+			"/Users/denis/QtProjects/TimeTrackerOnQt/Reminder/reminder.h",
 			"MU",
 			"EWIEGA46WW/moc_reminder.cpp",
 			null
 		]
 	],
 	"HEADER_EXTENSIONS" : [ "h", "hh", "h++", "hm", "hpp", "hxx", "in", "txx" ],
-	"INCLUDE_DIR" : "/Users/denis/QtProjects/FirstTest/build/Qt_6_8_3_for_macOS-Debug/Reminder/Reminder_autogen/include",
-	"MOC_COMPILATION_FILE" : "/Users/denis/QtProjects/FirstTest/build/Qt_6_8_3_for_macOS-Debug/Reminder/Reminder_autogen/mocs_compilation.cpp",
+	"INCLUDE_DIR" : "/Users/denis/QtProjects/TimeTrackerOnQt/build/Qt_6_8_3_for_macOS-Debug/Reminder/Reminder_autogen/include",
+	"MOC_COMPILATION_FILE" : "/Users/denis/QtProjects/TimeTrackerOnQt/build/Qt_6_8_3_for_macOS-Debug/Reminder/Reminder_autogen/mocs_compilation.cpp",
 	"MOC_DEFINITIONS" : [ "QT_CORE_LIB", "QT_GUI_LIB", "QT_WIDGETS_LIB" ],
 	"MOC_DEPEND_FILTERS" : 
 	[
@@ -121,9 +122,9 @@
 		"/Users/denis/Qt/6.8.3/macos/include",
 		"/Users/denis/Qt/6.8.3/macos/lib/QtGui.framework/Headers",
 		"/Users/denis/Qt/6.8.3/macos/lib/QtGui.framework",
-		"/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1",
-		"/Library/Developer/CommandLineTools/usr/lib/clang/15.0.0/include",
-		"/Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include",
+		"/Library/Developer/CommandLineTools/SDKs/MacOSX15.4.sdk/usr/include/c++/v1",
+		"/Library/Developer/CommandLineTools/usr/lib/clang/17/include",
+		"/Library/Developer/CommandLineTools/SDKs/MacOSX15.4.sdk/usr/include",
 		"/Library/Developer/CommandLineTools/usr/include"
 	],
 	"MOC_MACRO_NAMES" : 
@@ -146,20 +147,24 @@
 		"-c",
 		"/Users/denis/Qt/Tools/CMake/CMake.app/Contents/share/cmake-3.30/Modules/CMakeCXXCompilerABI.cpp"
 	],
-	"MOC_PREDEFS_FILE" : "/Users/denis/QtProjects/FirstTest/build/Qt_6_8_3_for_macOS-Debug/Reminder/Reminder_autogen/moc_predefs.h",
+	"MOC_PREDEFS_FILE" : "/Users/denis/QtProjects/TimeTrackerOnQt/build/Qt_6_8_3_for_macOS-Debug/Reminder/Reminder_autogen/moc_predefs.h",
 	"MOC_RELAXED_MODE" : false,
 	"MOC_SKIP" : [],
 	"MULTI_CONFIG" : false,
 	"PARALLEL" : 8,
-	"PARSE_CACHE_FILE" : "/Users/denis/QtProjects/FirstTest/build/Qt_6_8_3_for_macOS-Debug/Reminder/CMakeFiles/Reminder_autogen.dir/ParseCache.txt",
+	"PARSE_CACHE_FILE" : "/Users/denis/QtProjects/TimeTrackerOnQt/build/Qt_6_8_3_for_macOS-Debug/Reminder/CMakeFiles/Reminder_autogen.dir/ParseCache.txt",
 	"QT_MOC_EXECUTABLE" : "/Users/denis/Qt/6.8.3/macos/libexec/moc",
 	"QT_UIC_EXECUTABLE" : "/Users/denis/Qt/6.8.3/macos/libexec/uic",
 	"QT_VERSION_MAJOR" : 6,
 	"QT_VERSION_MINOR" : 8,
-	"SETTINGS_FILE" : "/Users/denis/QtProjects/FirstTest/build/Qt_6_8_3_for_macOS-Debug/Reminder/CMakeFiles/Reminder_autogen.dir/AutogenUsed.txt",
+	"SETTINGS_FILE" : "/Users/denis/QtProjects/TimeTrackerOnQt/build/Qt_6_8_3_for_macOS-Debug/Reminder/CMakeFiles/Reminder_autogen.dir/AutogenUsed.txt",
 	"SOURCES" : 
 	[
-		[ "/Users/denis/QtProjects/FirstTest/Reminder/reminder.cpp", "MU", null ]
+		[
+			"/Users/denis/QtProjects/TimeTrackerOnQt/Reminder/reminder.cpp",
+			"MU",
+			null
+		]
 	],
 	"UIC_OPTIONS" : [],
 	"UIC_SEARCH_PATHS" : [],

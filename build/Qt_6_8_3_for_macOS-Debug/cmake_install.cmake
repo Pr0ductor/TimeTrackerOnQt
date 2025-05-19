@@ -1,4 +1,4 @@
-# Install script for directory: /Users/denis/QtProjects/FirstTest
+# Install script for directory: /Users/denis/QtProjects/TimeTrackerOnQt
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -39,32 +39,32 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("/Users/denis/QtProjects/FirstTest/build/Qt_6_8_3_for_macOS-Debug/StopWatch/cmake_install.cmake")
+  include("/Users/denis/QtProjects/TimeTrackerOnQt/build/Qt_6_8_3_for_macOS-Debug/StopWatch/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("/Users/denis/QtProjects/FirstTest/build/Qt_6_8_3_for_macOS-Debug/Timer/cmake_install.cmake")
+  include("/Users/denis/QtProjects/TimeTrackerOnQt/build/Qt_6_8_3_for_macOS-Debug/Timer/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("/Users/denis/QtProjects/FirstTest/build/Qt_6_8_3_for_macOS-Debug/Kanban/cmake_install.cmake")
+  include("/Users/denis/QtProjects/TimeTrackerOnQt/build/Qt_6_8_3_for_macOS-Debug/Kanban/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("/Users/denis/QtProjects/FirstTest/build/Qt_6_8_3_for_macOS-Debug/Reminder/cmake_install.cmake")
+  include("/Users/denis/QtProjects/TimeTrackerOnQt/build/Qt_6_8_3_for_macOS-Debug/Reminder/cmake_install.cmake")
 endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/." TYPE DIRECTORY FILES "/Users/denis/QtProjects/FirstTest/build/Qt_6_8_3_for_macOS-Debug/FirstTest.app" USE_SOURCE_PERMISSIONS)
-  if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/./FirstTest.app/Contents/MacOS/FirstTest" AND
-     NOT IS_SYMLINK "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/./FirstTest.app/Contents/MacOS/FirstTest")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/." TYPE DIRECTORY FILES "/Users/denis/QtProjects/TimeTrackerOnQt/build/Qt_6_8_3_for_macOS-Debug/TimeTracker.app" USE_SOURCE_PERMISSIONS)
+  if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/./TimeTracker.app/Contents/MacOS/TimeTracker" AND
+     NOT IS_SYMLINK "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/./TimeTracker.app/Contents/MacOS/TimeTracker")
     execute_process(COMMAND /usr/bin/install_name_tool
       -delete_rpath "/Users/denis/Qt/6.8.3/macos/lib"
       -add_rpath "@executable_path/../Frameworks"
-      "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/./FirstTest.app/Contents/MacOS/FirstTest")
+      "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/./TimeTracker.app/Contents/MacOS/TimeTracker")
   endif()
 endif()
 
@@ -83,6 +83,6 @@ endif()
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-  file(WRITE "/Users/denis/QtProjects/FirstTest/build/Qt_6_8_3_for_macOS-Debug/${CMAKE_INSTALL_MANIFEST}"
+  file(WRITE "/Users/denis/QtProjects/TimeTrackerOnQt/build/Qt_6_8_3_for_macOS-Debug/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")
 endif()
