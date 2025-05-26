@@ -3,7 +3,6 @@
 #include "../mainwindow.h"
 #include "../../TimeTrackerOnQt/messageboxhelper.h"
 
-// Конструктор
 StopWatch::StopWatch(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::StopWatch)
@@ -80,16 +79,14 @@ void StopWatch::on_ApplySaveButtonOnStopWatch_clicked()
         return;
     }
 
-    // Получаем корень проекта: C:\Users\SHIDO\TimeTrackerOnQt
     QString projectRoot = getProjectRootPath();
 
-    // Путь к директории с результатами
     QString dirPath = projectRoot + "/saved_results";
     QString filePath = dirPath + "/stopwatch_savedresults.txt";
 
     QDir dir;
     if (!dir.exists(dirPath)) {
-        dir.mkdir(dirPath); // Создаем директорию, если её нет
+        dir.mkdir(dirPath); 
     }
 
     QFile file(filePath);
@@ -122,13 +119,13 @@ void StopWatch::on_ApplySaveButtonOnStopWatch_clicked()
 
 QString StopWatch::getProjectRootPath()
 {
-    // Получаем путь к директории, где находится исполняемый файл
+
     QString appDir = QCoreApplication::applicationDirPath();
 
-    // Предположим, что вы запускаете из build/, тогда поднимемся на уровень выше
+
     QDir dir(appDir);
     dir.cdUp();
-    dir.cdUp();    // Переходим из build/ в TimeTrackerOnQt/
+    dir.cdUp();   
 
     return dir.path();
 }
