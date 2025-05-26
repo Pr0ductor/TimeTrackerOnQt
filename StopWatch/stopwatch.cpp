@@ -3,7 +3,6 @@
 #include "../mainwindow.h"
 #include "../../TimeTrackerOnQt/messageboxhelper.h"
 
-// Конструктор
 StopWatch::StopWatch(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::StopWatch)
@@ -13,7 +12,7 @@ StopWatch::StopWatch(QWidget *parent)
 {
     ui->setupUi(this);
 
-
+    ui->horizontalLayoutForResults->setAlignment(Qt::AlignLeft);
     connect(ui->StartButtonOnStopWatch, &QPushButton::clicked, this, &StopWatch::onStartButtonClicked);
     connect(ui->StopButtonOnStopWatch, &QPushButton::clicked, this, &StopWatch::onStopButtonClicked);
 
@@ -23,6 +22,10 @@ StopWatch::StopWatch(QWidget *parent)
     });
 
     connect(ui->ApplySaveButtonOnStopWatch, &QPushButton::clicked, this, &StopWatch::on_ApplySaveButtonOnStopWatch_clicked);
+    loadSavedResults();
+
+    ui->ResultsScrollArea->setFocusPolicy(Qt::WheelFocus);
+
 }
 
 StopWatch::~StopWatch()
@@ -80,16 +83,14 @@ void StopWatch::on_ApplySaveButtonOnStopWatch_clicked()
         return;
     }
 
-    // Получаем корень проекта: C:\Users\SHIDO\TimeTrackerOnQt
     QString projectRoot = getProjectRootPath();
 
-    // Путь к директории с результатами
     QString dirPath = projectRoot + "/saved_results";
     QString filePath = dirPath + "/stopwatch_savedresults.txt";
 
     QDir dir;
     if (!dir.exists(dirPath)) {
-        dir.mkdir(dirPath); // Создаем директорию, если её нет
+        dir.mkdir(dirPath);
     }
 
     QFile file(filePath);
@@ -102,7 +103,7 @@ void StopWatch::on_ApplySaveButtonOnStopWatch_clicked()
         out << "Saved at: " << currentDateTime << "\n";
         out << "Time recorded: " << time << "\n";
         out << "Description: " << description << "\n";
-        out << "----------------------------------------\n\n";
+        out << "*---------------------------------------*\n\n";
 
         file.close();
 
@@ -118,17 +119,113 @@ void StopWatch::on_ApplySaveButtonOnStopWatch_clicked()
     }
 
     ui->TextEditOnStopWatch->clear();
+    loadSavedResults();
 }
 
 QString StopWatch::getProjectRootPath()
 {
-    // Получаем путь к директории, где находится исполняемый файл
     QString appDir = QCoreApplication::applicationDirPath();
 
-    // Предположим, что вы запускаете из build/, тогда поднимемся на уровень выше
     QDir dir(appDir);
     dir.cdUp();
-    dir.cdUp();    // Переходим из build/ в TimeTrackerOnQt/
+    dir.cdUp();
 
     return dir.path();
+}
+
+void StopWatch::loadSavedResults()
+{
+    QString projectRoot = getProjectRootPath();
+    QString filePath = projectRoot + "/saved_results/stopwatch_savedresults.txt";
+
+    QFile file(filePath);
+
+    if (!file.exists()) {
+        qDebug() << "File does not exist yet.";
+        return;
+    }
+
+    if (!file.open(QIODevice::ReadOnly | QIODevice::Text)) {
+        qDebug() << "Failed to open file for reading";
+        return;
+    }
+
+    QTextStream in(&file);
+
+    QLayoutItem *item;
+    while ((item = ui->horizontalLayoutForResults->takeAt(0)) != nullptr) {
+        delete item->widget();
+        delete item;
+    }
+
+    QStringList results;
+    QString currentResult;
+
+    while (!in.atEnd()) {
+        QString line = in.readLine();
+        if (line.startsWith("----------------------------------------")) {
+            if (!currentResult.isEmpty()) {
+                results.append(currentResult.trimmed());
+                currentResult.clear();
+            }
+        } else {
+            currentResult += line + "\n";
+        }
+    }
+
+    if (!currentResult.isEmpty()) {
+        results.append(currentResult.trimmed());
+    }
+
+    file.close();
+
+    for (const QString &result : results.mid(qMax(0, results.size() - 20))) {
+
+        QString time;
+        QString description;
+
+        QStringList lines = result.split("\n");
+        for (const QString &line : lines) {
+            QString tempLine = line;
+            if (tempLine.startsWith("Time recorded: ")) {
+                time = tempLine.remove("Time recorded: ");
+            } else if (tempLine.startsWith("Description: ")) {
+                description = tempLine.remove("Description: ");
+            }
+        }
+
+        QPushButton *button = new QPushButton(this);
+        button->setFixedSize(200, 200);
+        button->setStyleSheet(
+            "QPushButton {"
+            "background-color: #565555;"
+            "border-radius: 10px;"
+            "padding: 10px;"
+            "color: white;"
+            "font-size: 18px;"
+            "font-weight: bold;"
+            "}"
+            "QPushButton:hover {"
+            "background-color: #4CA8B7;"
+            "}"
+            );
+
+        QLabel *label = new QLabel(time, button);
+        label->setAlignment(Qt::AlignCenter);
+        label->setGeometry(20, 20, 160, 160);
+        label->setStyleSheet(
+            "background-color: #3E828C;"
+            "border-radius: 80px;"
+            "color: white;"
+            "font-size: 30px;"
+            "font-weight: bold;"
+            );
+
+        connect(button, &QPushButton::clicked, this, [description, time]() {
+            qDebug() << "Clicked on saved result:" << description << "-" << time;
+        });
+
+        ui->horizontalLayoutForResults->addWidget(button);
+
+    }
 }

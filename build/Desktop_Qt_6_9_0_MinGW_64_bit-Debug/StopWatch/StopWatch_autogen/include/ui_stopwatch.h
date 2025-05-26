@@ -12,11 +12,12 @@
 #include <QtCore/QVariant>
 #include <QtGui/QIcon>
 #include <QtWidgets/QApplication>
-#include <QtWidgets/QFrame>
+#include <QtWidgets/QHBoxLayout>
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QMenuBar>
 #include <QtWidgets/QPushButton>
+#include <QtWidgets/QScrollArea>
 #include <QtWidgets/QStatusBar>
 #include <QtWidgets/QTextEdit>
 #include <QtWidgets/QWidget>
@@ -45,9 +46,9 @@ public:
     QLabel *TimeOnMenuOnStopWatch;
     QTextEdit *TextEditOnStopWatch;
     QLabel *label_14;
-    QFrame *frame;
-    QPushButton *SavedResultButton;
-    QLabel *SavedResultLabel;
+    QScrollArea *ResultsScrollArea;
+    QWidget *scrollContentWidget;
+    QHBoxLayout *horizontalLayoutForResults;
     QLabel *label_15;
     QMenuBar *menubar;
     QStatusBar *statusbar;
@@ -240,46 +241,27 @@ public:
         font5.setPointSize(28);
         label_14->setFont(font5);
         label_14->setStyleSheet(QString::fromUtf8("color:black; background-color: transparent;"));
-        frame = new QFrame(centralwidget);
-        frame->setObjectName("frame");
-        frame->setGeometry(QRect(-20, 670, 1900, 250));
-        frame->setStyleSheet(QString::fromUtf8("background-color: #D9D9D9; /* \320\241\320\265\321\200\321\213\320\271 \321\204\320\276\320\275 */\n"
-"border-radius: 10px;       /* \320\227\320\260\321\202\321\203\320\277\320\273\320\265\320\275\320\275\321\213\320\265 \321\203\320\263\320\273\321\213 */\n"
-"padding: 10px;            /* \320\236\321\202\321\201\321\202\321\203\320\277\321\213 \320\262\320\275\321\203\321\202\321\200\320\270 */"));
-        frame->setFrameShape(QFrame::Shape::StyledPanel);
-        frame->setFrameShadow(QFrame::Shadow::Raised);
-        SavedResultButton = new QPushButton(frame);
-        SavedResultButton->setObjectName("SavedResultButton");
-        SavedResultButton->setGeometry(QRect(30, 30, 200, 200));
-        SavedResultButton->setStyleSheet(QString::fromUtf8("QPushButton {\n"
-"    background-color: #565555;         /* \320\246\320\262\320\265\321\202 \320\262\320\275\320\265\321\210\320\275\320\265\320\263\320\276 \321\204\320\276\320\275\320\260 */\n"
-"    border-radius: 10px;               /* \320\227\320\260\321\202\321\203\320\277\320\273\320\265\320\275\320\275\321\213\320\265 \321\203\320\263\320\273\321\213 */\n"
-"    padding: 10px;                    /* \320\236\321\202\321\201\321\202\321\203\320\277\321\213 \320\262\320\275\321\203\321\202\321\200\320\270 */\n"
-"    color: white;                     /* \320\221\320\265\320\273\321\213\320\271 \321\206\320\262\320\265\321\202 \321\202\320\265\320\272\321\201\321\202\320\260 */\n"
-"    font-size: 18px;                  /* \320\240\320\260\320\267\320\274\320\265\321\200 \321\210\321\200\320\270\321\204\321\202\320\260 \320\262\321\200\320\265\320\274\320\265\320\275\320\270 */\n"
-"    font-weight: bold;                /* \320\226\320\270\321\200\320\275\321\213\320\271 \321\210\321\200\320\270\321\204\321\202"
-                        " */\n"
-"}\n"
-"\n"
-"QPushButton:hover {\n"
-"    background-color: #4CA8B7;        /* \320\246\320\262\320\265\321\202 \320\277\321\200\320\270 \320\275\320\260\320\262\320\265\320\264\320\265\320\275\320\270\320\270 \320\272\321\203\321\200\321\201\320\276\321\200\320\260 */\n"
-"}"));
-        SavedResultLabel = new QLabel(SavedResultButton);
-        SavedResultLabel->setObjectName("SavedResultLabel");
-        SavedResultLabel->setGeometry(QRect(20, 20, 157, 157));
-        QFont font6;
-        font6.setBold(true);
-        SavedResultLabel->setFont(font6);
-        SavedResultLabel->setStyleSheet(QString::fromUtf8("background-color: #3E828C;         /* \320\246\320\262\320\265\321\202 \320\262\320\275\321\203\321\202\321\200\320\265\320\275\320\275\320\265\320\263\320\276 \320\272\321\200\321\203\320\263\320\260 */\n"
-"border-radius: 75%;               /* \320\232\321\200\321\203\320\263\320\273\321\213\320\271 \321\204\320\276\320\275 */\n"
-"padding: 10px;                    /* \320\236\321\202\321\201\321\202\321\203\320\277\321\213 \320\262\320\275\321\203\321\202\321\200\320\270 */\n"
-"color: white;                     /* \320\221\320\265\320\273\321\213\320\271 \321\206\320\262\320\265\321\202 \321\202\320\265\320\272\321\201\321\202\320\260 */\n"
-"font-size: 30px;                  /* \320\240\320\260\320\267\320\274\320\265\321\200 \321\210\321\200\320\270\321\204\321\202\320\260 \320\262\321\200\320\265\320\274\320\265\320\275\320\270 */\n"
-"font-weight: bold;                /* \320\226\320\270\321\200\320\275\321\213\320\271 \321\210\321\200\320\270\321\204\321\202 */"));
-        SavedResultLabel->setAlignment(Qt::AlignmentFlag::AlignCenter);
-        label_15 = new QLabel(frame);
+        ResultsScrollArea = new QScrollArea(centralwidget);
+        ResultsScrollArea->setObjectName("ResultsScrollArea");
+        ResultsScrollArea->setGeometry(QRect(-50, 620, 1900, 250));
+        ResultsScrollArea->setMouseTracking(true);
+        ResultsScrollArea->setFocusPolicy(Qt::FocusPolicy::WheelFocus);
+        ResultsScrollArea->setStyleSheet(QString::fromUtf8("background-color: #D9D9D9; /* \320\241\320\265\321\200\321\213\320\271 \321\204\320\276\320\275 */\n"
+"border-radius: 10px;"));
+        ResultsScrollArea->setVerticalScrollBarPolicy(Qt::ScrollBarPolicy::ScrollBarAlwaysOff);
+        ResultsScrollArea->setHorizontalScrollBarPolicy(Qt::ScrollBarPolicy::ScrollBarAsNeeded);
+        ResultsScrollArea->setWidgetResizable(true);
+        scrollContentWidget = new QWidget();
+        scrollContentWidget->setObjectName("scrollContentWidget");
+        scrollContentWidget->setGeometry(QRect(0, 0, 1900, 250));
+        horizontalLayoutForResults = new QHBoxLayout(scrollContentWidget);
+        horizontalLayoutForResults->setSpacing(20);
+        horizontalLayoutForResults->setObjectName("horizontalLayoutForResults");
+        horizontalLayoutForResults->setContentsMargins(20, 20, 20, 20);
+        ResultsScrollArea->setWidget(scrollContentWidget);
+        label_15 = new QLabel(centralwidget);
         label_15->setObjectName("label_15");
-        label_15->setGeometry(QRect(30, 10, 1900, 16));
+        label_15->setGeometry(QRect(-10, 550, 1900, 16));
         label_15->setStyleSheet(QString::fromUtf8("background-color: transparent; /* \320\237\321\200\320\276\320\267\321\200\320\260\321\207\320\275\321\213\320\271 \321\204\320\276\320\275 */\n"
 "border-top: 2px solid #3E828C; /* \320\227\320\265\320\273\320\265\320\275\320\260\321\217 \320\262\320\265\321\200\321\205\320\275\321\217\321\217 \320\263\321\200\320\260\320\275\320\270\321\206\320\260 */"));
         StopWatch->setCentralWidget(centralwidget);
@@ -325,8 +307,6 @@ public:
 "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'.AppleSystemUIFont';\"><br /></p></body></html>", nullptr));
         TextEditOnStopWatch->setPlaceholderText(QCoreApplication::translate("StopWatch", "Description of the completed task", nullptr));
         label_14->setText(QCoreApplication::translate("StopWatch", "Saved Results", nullptr));
-        SavedResultButton->setText(QString());
-        SavedResultLabel->setText(QCoreApplication::translate("StopWatch", "10:00", nullptr));
         label_15->setText(QString());
     } // retranslateUi
 

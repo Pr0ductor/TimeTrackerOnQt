@@ -39,6 +39,7 @@ private:
 
     QString formatTime(int milliseconds);
     QString getProjectRootPath();
+    void loadSavedResults();
 };
 
 #endif // STOPWATCH_H
