@@ -4,6 +4,10 @@
 #include <QMainWindow>
 #include <QMainWindow>
 #include <QTimer>
+#include <QFile>
+#include <QDir>
+#include <QDateTime>
+#include <QMessageBox>
 
 QT_BEGIN_NAMESPACE
 namespace Ui {
@@ -24,6 +28,8 @@ private slots:
     void onStartButtonClicked();
     void onStopButtonClicked();
 
+    void on_ApplySaveButtonOnStopWatch_clicked();
+
 private:
     Ui::StopWatch *ui;
 
@@ -32,6 +38,7 @@ private:
     bool isRunning;
 
     QString formatTime(int milliseconds);
+    QString getProjectRootPath();
 };
 
 #endif // STOPWATCH_H

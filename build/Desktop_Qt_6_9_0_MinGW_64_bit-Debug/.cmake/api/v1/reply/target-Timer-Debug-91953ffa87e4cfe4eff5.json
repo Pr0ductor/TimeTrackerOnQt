@@ -39,7 +39,7 @@
 			{
 				"command" : 2,
 				"file" : 0,
-				"line" : 33,
+				"line" : 36,
 				"parent" : 0
 			}
 		]
@@ -66,6 +66,14 @@
 				{
 					"backtrace" : 2,
 					"define" : "QT_GUI_LIB"
+				},
+				{
+					"backtrace" : 2,
+					"define" : "QT_MULTIMEDIA_LIB"
+				},
+				{
+					"backtrace" : 2,
+					"define" : "QT_NETWORK_LIB"
 				},
 				{
 					"backtrace" : 2,
@@ -130,6 +138,16 @@
 					"backtrace" : 2,
 					"isSystem" : true,
 					"path" : "C:/Qt/6.9.0/mingw_64/include/QtGui"
+				},
+				{
+					"backtrace" : 2,
+					"isSystem" : true,
+					"path" : "C:/Qt/6.9.0/mingw_64/include/QtMultimedia"
+				},
+				{
+					"backtrace" : 2,
+					"isSystem" : true,
+					"path" : "C:/Qt/6.9.0/mingw_64/include/QtNetwork"
 				}
 			],
 			"language" : "CXX",

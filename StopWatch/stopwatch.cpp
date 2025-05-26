@@ -1,6 +1,7 @@
 #include "stopwatch.h"
 #include "ui_stopwatch.h"
 #include "../mainwindow.h"
+#include "../../TimeTrackerOnQt/messageboxhelper.h"
 
 // Конструктор
 StopWatch::StopWatch(QWidget *parent)
@@ -20,6 +21,8 @@ StopWatch::StopWatch(QWidget *parent)
         elapsedMilliseconds += 10;
         ui->StopWatchMain->setText(formatTime(elapsedMilliseconds));
     });
+
+    connect(ui->ApplySaveButtonOnStopWatch, &QPushButton::clicked, this, &StopWatch::on_ApplySaveButtonOnStopWatch_clicked);
 }
 
 StopWatch::~StopWatch()
@@ -65,4 +68,67 @@ QString StopWatch::formatTime(int milliseconds)
         .arg(hours, 2, 10, QChar('0'))
         .arg(minutes, 2, 10, QChar('0'))
         .arg(seconds, 2, 10, QChar('0'));
+}
+
+void StopWatch::on_ApplySaveButtonOnStopWatch_clicked()
+{
+    QString time = ui->TimeOnMenuOnStopWatch->text();
+    QString description = ui->TextEditOnStopWatch->toPlainText().trimmed();
+
+    if (description.isEmpty()) {
+        qDebug() << "Description is empty!";
+        return;
+    }
+
+    // Получаем корень проекта: C:\Users\SHIDO\TimeTrackerOnQt
+    QString projectRoot = getProjectRootPath();
+
+    // Путь к директории с результатами
+    QString dirPath = projectRoot + "/saved_results";
+    QString filePath = dirPath + "/stopwatch_savedresults.txt";
+
+    QDir dir;
+    if (!dir.exists(dirPath)) {
+        dir.mkdir(dirPath); // Создаем директорию, если её нет
+    }
+
+    QFile file(filePath);
+    if (file.open(QIODevice::Append | QIODevice::Text)) {
+        QTextStream out(&file);
+
+        QString currentDateTime = QDateTime::currentDateTime().toString("yyyy-MM-dd HH:mm:ss");
+
+        out << "----------------------------------------\n";
+        out << "Saved at: " << currentDateTime << "\n";
+        out << "Time recorded: " << time << "\n";
+        out << "Description: " << description << "\n";
+        out << "----------------------------------------\n\n";
+
+        file.close();
+
+        qDebug() << "Data saved to:" << filePath;
+        MessageBoxHelper& helper = MessageBoxHelper::instance();
+
+        helper.showMessage(this, MessageBoxHelper::Info, "Успех!", "Результат успешно сохранен.");
+    } else {
+        qDebug() << "Failed to open file for writing:" << filePath;
+        MessageBoxHelper& helper = MessageBoxHelper::instance();
+
+        helper.showMessage(this, MessageBoxHelper::Error, "Ошибка", "Результат не был сохранен(((.");
+    }
+
+    ui->TextEditOnStopWatch->clear();
+}
+
+QString StopWatch::getProjectRootPath()
+{
+    // Получаем путь к директории, где находится исполняемый файл
+    QString appDir = QCoreApplication::applicationDirPath();
+
+    // Предположим, что вы запускаете из build/, тогда поднимемся на уровень выше
+    QDir dir(appDir);
+    dir.cdUp();
+    dir.cdUp();    // Переходим из build/ в TimeTrackerOnQt/
+
+    return dir.path();
 }
