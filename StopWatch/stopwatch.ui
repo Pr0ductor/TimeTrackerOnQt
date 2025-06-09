@@ -464,214 +464,78 @@ li.checked::marker { content: &quot;\2612&quot;; }
      <string>Saved Results</string>
     </property>
    </widget>
-   <widget class="QFrame" name="frame">
+   <widget class="QScrollArea" name="ResultsScrollArea">
     <property name="geometry">
      <rect>
-      <x>-20</x>
+      <x>-10</x>
       <y>670</y>
       <width>1900</width>
       <height>250</height>
      </rect>
     </property>
+    <property name="mouseTracking">
+     <bool>true</bool>
+    </property>
+    <property name="focusPolicy">
+     <enum>Qt::FocusPolicy::WheelFocus</enum>
+    </property>
     <property name="styleSheet">
      <string notr="true">background-color: #D9D9D9; /* Серый фон */
-border-radius: 10px;       /* Затупленные углы */
-padding: 10px;            /* Отступы внутри */</string>
+border-radius: 10px;</string>
     </property>
-    <property name="frameShape">
-     <enum>QFrame::Shape::StyledPanel</enum>
+    <property name="verticalScrollBarPolicy">
+     <enum>Qt::ScrollBarPolicy::ScrollBarAlwaysOff</enum>
     </property>
-    <property name="frameShadow">
-     <enum>QFrame::Shadow::Raised</enum>
+    <property name="horizontalScrollBarPolicy">
+     <enum>Qt::ScrollBarPolicy::ScrollBarAsNeeded</enum>
     </property>
-    <widget class="QLabel" name="label_15">
+    <property name="widgetResizable">
+     <bool>true</bool>
+    </property>
+    <widget class="QWidget" name="scrollContentWidget">
      <property name="geometry">
       <rect>
-       <x>-70</x>
-       <y>20</y>
+       <x>0</x>
+       <y>0</y>
        <width>1900</width>
-       <height>16</height>
+       <height>250</height>
       </rect>
      </property>
-     <property name="styleSheet">
-      <string notr="true">background-color: transparent; /* Прозрачный фон */
+     <layout class="QHBoxLayout" name="horizontalLayoutForResults">
+      <property name="spacing">
+       <number>20</number>
+      </property>
+      <property name="leftMargin">
+       <number>20</number>
+      </property>
+      <property name="topMargin">
+       <number>20</number>
+      </property>
+      <property name="rightMargin">
+       <number>20</number>
+      </property>
+      <property name="bottomMargin">
+       <number>20</number>
+      </property>
+     </layout>
+    </widget>
+   </widget>
+   <widget class="QLabel" name="label_15">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>670</y>
+      <width>1900</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: transparent; /* Прозрачный фон */
 border-top: 2px solid #3E828C; /* Зеленая верхняя граница */</string>
-     </property>
-     <property name="text">
-      <string/>
-     </property>
-    </widget>
-    <widget class="QPushButton" name="pushButton_5">
-     <property name="geometry">
-      <rect>
-       <x>30</x>
-       <y>30</y>
-       <width>200</width>
-       <height>200</height>
-      </rect>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">QPushButton {
-    background-color: #565555;         /* Цвет внешнего фона */
-    border-radius: 10px;               /* Затупленные углы */
-    padding: 10px;                    /* Отступы внутри */
-    color: white;                     /* Белый цвет текста */
-    font-size: 18px;                  /* Размер шрифта времени */
-    font-weight: bold;                /* Жирный шрифт */
-}
-
-QPushButton:hover {
-    background-color: #4CA8B7;        /* Цвет при наведении курсора */
-}</string>
-     </property>
-     <property name="text">
-      <string/>
-     </property>
-    </widget>
-    <widget class="QLabel" name="label_16">
-     <property name="geometry">
-      <rect>
-       <x>50</x>
-       <y>50</y>
-       <width>157</width>
-       <height>157</height>
-      </rect>
-     </property>
-     <property name="font">
-      <font>
-       <pointsize>-1</pointsize>
-       <bold>true</bold>
-      </font>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">background-color: #3E828C;         /* Цвет внутреннего круга */
-border-radius: 75%;               /* Круглый фон */
-padding: 10px;                    /* Отступы внутри */
-color: white;                     /* Белый цвет текста */
-font-size: 30px;                  /* Размер шрифта времени */
-font-weight: bold;                /* Жирный шрифт */</string>
-     </property>
-     <property name="text">
-      <string>10:00</string>
-     </property>
-     <property name="alignment">
-      <set>Qt::AlignmentFlag::AlignCenter</set>
-     </property>
-    </widget>
-    <widget class="QPushButton" name="pushButton_6">
-     <property name="geometry">
-      <rect>
-       <x>310</x>
-       <y>30</y>
-       <width>200</width>
-       <height>200</height>
-      </rect>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">QPushButton {
-    background-color: #565555;         /* Цвет внешнего фона */
-    border-radius: 10px;               /* Затупленные углы */
-    padding: 10px;                    /* Отступы внутри */
-    color: white;                     /* Белый цвет текста */
-    font-size: 18px;                  /* Размер шрифта времени */
-    font-weight: bold;                /* Жирный шрифт */
-}
-
-QPushButton:hover {
-    background-color: #4CA8B7;        /* Цвет при наведении курсора */
-}</string>
-     </property>
-     <property name="text">
-      <string/>
-     </property>
-    </widget>
-    <widget class="QPushButton" name="pushButton_7">
-     <property name="geometry">
-      <rect>
-       <x>580</x>
-       <y>30</y>
-       <width>200</width>
-       <height>200</height>
-      </rect>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">QPushButton {
-    background-color: #565555;         /* Цвет внешнего фона */
-    border-radius: 10px;               /* Затупленные углы */
-    padding: 10px;                    /* Отступы внутри */
-    color: white;                     /* Белый цвет текста */
-    font-size: 18px;                  /* Размер шрифта времени */
-    font-weight: bold;                /* Жирный шрифт */
-}
-
-QPushButton:hover {
-    background-color: #4CA8B7;        /* Цвет при наведении курсора */
-}</string>
-     </property>
-     <property name="text">
-      <string/>
-     </property>
-    </widget>
-    <widget class="QLabel" name="label_17">
-     <property name="geometry">
-      <rect>
-       <x>330</x>
-       <y>50</y>
-       <width>157</width>
-       <height>157</height>
-      </rect>
-     </property>
-     <property name="font">
-      <font>
-       <pointsize>-1</pointsize>
-       <bold>true</bold>
-      </font>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">background-color: #3E828C;         /* Цвет внутреннего круга */
-border-radius: 75%;               /* Круглый фон */
-padding: 10px;                    /* Отступы внутри */
-color: white;                     /* Белый цвет текста */
-font-size: 30px;                  /* Размер шрифта времени */
-font-weight: bold;                /* Жирный шрифт */</string>
-     </property>
-     <property name="text">
-      <string>10:00</string>
-     </property>
-     <property name="alignment">
-      <set>Qt::AlignmentFlag::AlignCenter</set>
-     </property>
-    </widget>
-    <widget class="QLabel" name="label_18">
-     <property name="geometry">
-      <rect>
-       <x>600</x>
-       <y>50</y>
-       <width>157</width>
-       <height>157</height>
-      </rect>
-     </property>
-     <property name="font">
-      <font>
-       <pointsize>-1</pointsize>
-       <bold>true</bold>
-      </font>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">background-color: #3E828C;         /* Цвет внутреннего круга */
-border-radius: 75%;               /* Круглый фон */
-padding: 10px;                    /* Отступы внутри */
-color: white;                     /* Белый цвет текста */
-font-size: 30px;                  /* Размер шрифта времени */
-font-weight: bold;                /* Жирный шрифт */</string>
-     </property>
-     <property name="text">
-      <string>10:00</string>
-     </property>
-     <property name="alignment">
-      <set>Qt::AlignmentFlag::AlignCenter</set>
-     </property>
-    </widget>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
    </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
