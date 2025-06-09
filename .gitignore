@@ -1,0 +1,19 @@
+# Qt-specific ignore
+*.user
+CMakeLists.txt.user
+
+# Build files
+build/
+release/
+debug/
+
+# macOS system files
+.DS_Store
+
+# Temporary files
+*.log
+*.tmp
+*.swp
+*.swo
+*.swn
+~*
