@@ -181,13 +181,16 @@ void StopWatch::loadSavedResults()
 
     for (const QString &result : results.mid(qMax(0, results.size() - 20))) {
 
+        QStringList lines = result.split("\n");
+        QString savedDateTime;
         QString time;
         QString description;
 
-        QStringList lines = result.split("\n");
         for (const QString &line : lines) {
             QString tempLine = line;
-            if (tempLine.startsWith("Time recorded: ")) {
+            if (tempLine.startsWith("Saved at: ")) {
+                savedDateTime = tempLine.remove("Saved at: ");
+            } else if (tempLine.startsWith("Time recorded: ")) {
                 time = tempLine.remove("Time recorded: ");
             } else if (tempLine.startsWith("Description: ")) {
                 description = tempLine.remove("Description: ");
@@ -201,14 +204,25 @@ void StopWatch::loadSavedResults()
             "background-color: #565555;"
             "border-radius: 10px;"
             "padding: 10px;"
-            "color: white;"
+            "color: black;"
             "font-size: 18px;"
             "font-weight: bold;"
             "}"
             "QPushButton:hover {"
             "background-color: #4CA8B7;"
             "}"
+            "QToolTip {"
+            "color: black;"
+            "background-color: white;"
+            "border: 1px solid #565555;"
+            "}"
             );
+
+        QString tooltipText = QString("Дата сохранения: %1\nЗаписанное время: %2\nОписание: %3")
+            .arg(savedDateTime)
+            .arg(time)
+            .arg(description);
+        button->setToolTip(tooltipText);
 
         QLabel *label = new QLabel(time, button);
         label->setAlignment(Qt::AlignCenter);
@@ -216,7 +230,7 @@ void StopWatch::loadSavedResults()
         label->setStyleSheet(
             "background-color: #3E828C;"
             "border-radius: 80px;"
-            "color: white;"
+            "color: black;"
             "font-size: 30px;"
             "font-weight: bold;"
             );
