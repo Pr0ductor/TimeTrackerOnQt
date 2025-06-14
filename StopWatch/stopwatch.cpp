@@ -218,11 +218,75 @@ void StopWatch::loadSavedResults()
             "}"
             );
 
+        QPushButton *deleteButton = new QPushButton("×", button);
+        deleteButton->setFixedSize(30, 30);
+        deleteButton->setStyleSheet(
+            "QPushButton {"
+            "background-color: #ff4444;"
+            "border-radius: 15px;"
+            "color: white;"
+            "font-size: 20px;"
+            "font-weight: bold;"
+            "}"
+            "QPushButton:hover {"
+            "background-color: #ff0000;"
+            "}"
+            );
+        deleteButton->move(160, 10);
+
         QString tooltipText = QString("Дата сохранения: %1\nЗаписанное время: %2\nОписание: %3")
             .arg(savedDateTime)
             .arg(time)
             .arg(description);
         button->setToolTip(tooltipText);
+
+        connect(deleteButton, &QPushButton::clicked, this, [this, result]() {
+            QString projectRoot = getProjectRootPath();
+            QString filePath = projectRoot + "/saved_results/stopwatch_savedresults.txt";
+
+            QFile file(filePath);
+            if (!file.open(QIODevice::ReadOnly | QIODevice::Text)) {
+                qDebug() << "Failed to open file for reading";
+                return;
+            }
+
+            QStringList allResults;
+            QString currentResult;
+            QTextStream in(&file);
+
+            while (!in.atEnd()) {
+                QString line = in.readLine();
+                if (line.startsWith("----------------------------------------")) {
+                    if (!currentResult.isEmpty()) {
+                        allResults.append(currentResult.trimmed());
+                        currentResult.clear();
+                    }
+                } else {
+                    currentResult += line + "\n";
+                }
+            }
+            if (!currentResult.isEmpty()) {
+                allResults.append(currentResult.trimmed());
+            }
+            file.close();
+
+            allResults.removeOne(result.trimmed());
+
+            if (!file.open(QIODevice::WriteOnly | QIODevice::Text)) {
+                qDebug() << "Failed to open file for writing";
+                return;
+            }
+
+            QTextStream out(&file);
+            for (const QString &res : allResults) {
+                out << "----------------------------------------\n";
+                out << res << "\n";
+                out << "*---------------------------------------*\n\n";
+            }
+            file.close();
+
+            loadSavedResults();
+        });
 
         QLabel *label = new QLabel(time, button);
         label->setAlignment(Qt::AlignCenter);
