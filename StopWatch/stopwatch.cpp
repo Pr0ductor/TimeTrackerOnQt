@@ -1,8 +1,8 @@
 #include "stopwatch.h"
 #include "ui_stopwatch.h"
 #include "../mainwindow.h"
+#include "../../TimeTrackerOnQt/messageboxhelper.h"
 
-// Конструктор
 StopWatch::StopWatch(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::StopWatch)
@@ -12,7 +12,7 @@ StopWatch::StopWatch(QWidget *parent)
 {
     ui->setupUi(this);
 
-
+    ui->horizontalLayoutForResults->setAlignment(Qt::AlignLeft);
     connect(ui->StartButtonOnStopWatch, &QPushButton::clicked, this, &StopWatch::onStartButtonClicked);
     connect(ui->StopButtonOnStopWatch, &QPushButton::clicked, this, &StopWatch::onStopButtonClicked);
 
@@ -20,6 +20,12 @@ StopWatch::StopWatch(QWidget *parent)
         elapsedMilliseconds += 10;
         ui->StopWatchMain->setText(formatTime(elapsedMilliseconds));
     });
+
+    connect(ui->ApplySaveButtonOnStopWatch, &QPushButton::clicked, this, &StopWatch::on_ApplySaveButtonOnStopWatch_clicked);
+    loadSavedResults();
+
+    ui->ResultsScrollArea->setFocusPolicy(Qt::WheelFocus);
+
 }
 
 StopWatch::~StopWatch()
@@ -65,4 +71,239 @@ QString StopWatch::formatTime(int milliseconds)
         .arg(hours, 2, 10, QChar('0'))
         .arg(minutes, 2, 10, QChar('0'))
         .arg(seconds, 2, 10, QChar('0'));
+}
+
+void StopWatch::on_ApplySaveButtonOnStopWatch_clicked()
+{
+    QString time = ui->TimeOnMenuOnStopWatch->text();
+    QString description = ui->TextEditOnStopWatch->toPlainText().trimmed();
+
+    if (description.isEmpty()) {
+        qDebug() << "Description is empty!";
+        return;
+    }
+
+    QString projectRoot = getProjectRootPath();
+
+    QString dirPath = projectRoot + "/saved_results";
+    QString filePath = dirPath + "/stopwatch_savedresults.txt";
+
+    QDir dir;
+    if (!dir.exists(dirPath)) {
+        dir.mkdir(dirPath);
+    }
+
+    QFile file(filePath);
+    if (file.open(QIODevice::Append | QIODevice::Text)) {
+        QTextStream out(&file);
+
+        QString currentDateTime = QDateTime::currentDateTime().toString("yyyy-MM-dd HH:mm:ss");
+
+        out << "----------------------------------------\n";
+        out << "Saved at: " << currentDateTime << "\n";
+        out << "Time recorded: " << time << "\n";
+        out << "Description: " << description << "\n";
+        out << "*---------------------------------------*\n\n";
+
+        file.close();
+
+        qDebug() << "Data saved to:" << filePath;
+        MessageBoxHelper& helper = MessageBoxHelper::instance();
+
+        helper.showMessage(this, MessageBoxHelper::Info, "Успех!", "Результат успешно сохранен.");
+    } else {
+        qDebug() << "Failed to open file for writing:" << filePath;
+        MessageBoxHelper& helper = MessageBoxHelper::instance();
+
+        helper.showMessage(this, MessageBoxHelper::Error, "Ошибка", "Результат не был сохранен(((.");
+    }
+
+    ui->TextEditOnStopWatch->clear();
+    loadSavedResults();
+}
+
+QString StopWatch::getProjectRootPath()
+{
+    QString appDir = QCoreApplication::applicationDirPath();
+
+    QDir dir(appDir);
+    dir.cdUp();
+    dir.cdUp();
+
+    return dir.path();
+}
+
+void StopWatch::loadSavedResults()
+{
+    QString projectRoot = getProjectRootPath();
+    QString filePath = projectRoot + "/saved_results/stopwatch_savedresults.txt";
+
+    QFile file(filePath);
+
+    if (!file.exists()) {
+        qDebug() << "File does not exist yet.";
+        return;
+    }
+
+    if (!file.open(QIODevice::ReadOnly | QIODevice::Text)) {
+        qDebug() << "Failed to open file for reading";
+        return;
+    }
+
+    QTextStream in(&file);
+
+    QLayoutItem *item;
+    while ((item = ui->horizontalLayoutForResults->takeAt(0)) != nullptr) {
+        delete item->widget();
+        delete item;
+    }
+
+    QStringList results;
+    QString currentResult;
+
+    while (!in.atEnd()) {
+        QString line = in.readLine();
+        if (line.startsWith("----------------------------------------")) {
+            if (!currentResult.isEmpty()) {
+                results.append(currentResult.trimmed());
+                currentResult.clear();
+            }
+        } else {
+            currentResult += line + "\n";
+        }
+    }
+
+    if (!currentResult.isEmpty()) {
+        results.append(currentResult.trimmed());
+    }
+
+    file.close();
+
+    for (const QString &result : results.mid(qMax(0, results.size() - 20))) {
+
+        QStringList lines = result.split("\n");
+        QString savedDateTime;
+        QString time;
+        QString description;
+
+        for (const QString &line : lines) {
+            QString tempLine = line;
+            if (tempLine.startsWith("Saved at: ")) {
+                savedDateTime = tempLine.remove("Saved at: ");
+            } else if (tempLine.startsWith("Time recorded: ")) {
+                time = tempLine.remove("Time recorded: ");
+            } else if (tempLine.startsWith("Description: ")) {
+                description = tempLine.remove("Description: ");
+            }
+        }
+
+        QPushButton *button = new QPushButton(this);
+        button->setFixedSize(200, 200);
+        button->setStyleSheet(
+            "QPushButton {"
+            "background-color: #565555;"
+            "border-radius: 10px;"
+            "padding: 10px;"
+            "color: black;"
+            "font-size: 18px;"
+            "font-weight: bold;"
+            "}"
+            "QPushButton:hover {"
+            "background-color: #4CA8B7;"
+            "}"
+            "QToolTip {"
+            "color: black;"
+            "background-color: white;"
+            "border: 1px solid #565555;"
+            "}"
+            );
+
+        QPushButton *deleteButton = new QPushButton("×", button);
+        deleteButton->setFixedSize(30, 30);
+        deleteButton->setStyleSheet(
+            "QPushButton {"
+            "background-color: #ff4444;"
+            "border-radius: 15px;"
+            "color: white;"
+            "font-size: 20px;"
+            "font-weight: bold;"
+            "}"
+            "QPushButton:hover {"
+            "background-color: #ff0000;"
+            "}"
+            );
+        deleteButton->move(160, 10);
+
+        QString tooltipText = QString("Дата сохранения: %1\nЗаписанное время: %2\nОписание: %3")
+            .arg(savedDateTime)
+            .arg(time)
+            .arg(description);
+        button->setToolTip(tooltipText);
+
+        connect(deleteButton, &QPushButton::clicked, this, [this, result]() {
+            QString projectRoot = getProjectRootPath();
+            QString filePath = projectRoot + "/saved_results/stopwatch_savedresults.txt";
+
+            QFile file(filePath);
+            if (!file.open(QIODevice::ReadOnly | QIODevice::Text)) {
+                qDebug() << "Failed to open file for reading";
+                return;
+            }
+
+            QStringList allResults;
+            QString currentResult;
+            QTextStream in(&file);
+
+            while (!in.atEnd()) {
+                QString line = in.readLine();
+                if (line.startsWith("----------------------------------------")) {
+                    if (!currentResult.isEmpty()) {
+                        allResults.append(currentResult.trimmed());
+                        currentResult.clear();
+                    }
+                } else {
+                    currentResult += line + "\n";
+                }
+            }
+            if (!currentResult.isEmpty()) {
+                allResults.append(currentResult.trimmed());
+            }
+            file.close();
+
+            allResults.removeOne(result.trimmed());
+
+            if (!file.open(QIODevice::WriteOnly | QIODevice::Text)) {
+                qDebug() << "Failed to open file for writing";
+                return;
+            }
+
+            QTextStream out(&file);
+            for (const QString &res : allResults) {
+                out << "----------------------------------------\n";
+                out << res << "\n";
+                out << "*---------------------------------------*\n\n";
+            }
+            file.close();
+
+            loadSavedResults();
+        });
+
+        QLabel *label = new QLabel(time, button);
+        label->setAlignment(Qt::AlignCenter);
+        label->setGeometry(20, 20, 160, 160);
+        label->setStyleSheet(
+            "background-color: #3E828C;"
+            "border-radius: 80px;"
+            "color: black;"
+            "font-size: 30px;"
+            "font-weight: bold;"
+            );
+
+        connect(button, &QPushButton::clicked, this, [description, time]() {
+            qDebug() << "Clicked on saved result:" << description << "-" << time;
+        });
+
+        ui->horizontalLayoutForResults->addWidget(button);
+
+    }
 }

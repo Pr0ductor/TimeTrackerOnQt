@@ -1,4 +1,6 @@
 #include "mainwindow.h"
+#include "Reminder/notificationmanager.h"
+
 
 #include <QApplication>
 
@@ -7,6 +9,9 @@
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
+
+    NotificationManager::instance();
+
     MainWindow w;
     w.show();
 

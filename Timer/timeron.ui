@@ -137,7 +137,7 @@ padding: 0; /* Отступы */
     <string/>
    </property>
   </widget>
-  <widget class="QPushButton" name="DeclineButtonOnTimerOn">
+  <widget class="QPushButton" name="PauseButtonOnTimerOn">
    <property name="geometry">
     <rect>
      <x>450</x>
@@ -156,7 +156,7 @@ padding: 0; /* Отступы */
 }</string>
    </property>
    <property name="text">
-    <string>Decline</string>
+    <string>PAUSE</string>
    </property>
   </widget>
   <widget class="QPushButton" name="StopButtonOnTimerOn">
@@ -199,35 +199,6 @@ padding: 0; /* Отступы */
    </property>
    <property name="text">
     <string/>
-   </property>
-  </widget>
-  <widget class="QLabel" name="label">
-   <property name="geometry">
-    <rect>
-     <x>990</x>
-     <y>270</y>
-     <width>450</width>
-     <height>265</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <pointsize>18</pointsize>
-    </font>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">QLabel {
-    background-color: #D9D9D9;
-    border-radius: 20px;
-    padding: 10px;
-    color: black;
-}</string>
-   </property>
-   <property name="text">
-    <string>Some info about task</string>
-   </property>
-   <property name="alignment">
-    <set>Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignTop</set>
    </property>
   </widget>
   <widget class="QLabel" name="label_7">
@@ -311,6 +282,29 @@ padding: 0; /* Отступы */
    </property>
    <property name="alignment">
     <set>Qt::AlignmentFlag::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QTextEdit" name="Description">
+   <property name="geometry">
+    <rect>
+     <x>1000</x>
+     <y>220</y>
+     <width>421</width>
+     <height>321</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>25</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">
+    background-color: #D9D9D9;
+    border-radius: 20px;
+    padding: 10px;
+    color: black;
+</string>
    </property>
   </widget>
  </widget>

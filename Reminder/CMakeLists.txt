@@ -12,8 +12,8 @@ set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 # Поиск Qt
-find_package(QT NAMES Qt6 Qt5 REQUIRED COMPONENTS Widgets)
-find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Widgets)
+find_package(QT NAMES Qt6 Qt5 REQUIRED COMPONENTS Widgets Multimedia)
+find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Widgets Multimedia)
 
 # Определение исходных файлов подпроекта
 set(REMINDER_SOURCES
@@ -24,7 +24,17 @@ set(REMINDER_SOURCES
 )
 
 # Создание статической библиотеки
-add_library(Reminder STATIC ${REMINDER_SOURCES})
+add_library(Reminder STATIC ${REMINDER_SOURCES}
+    notificationmanager.h notificationmanager.cpp notificationmanager.ui)
+
+target_link_libraries(Reminder PRIVATE
+    Qt${QT_VERSION_MAJOR}::Widgets
+    Qt${QT_VERSION_MAJOR}::Multimedia
+)
+
+target_include_directories(Reminder PUBLIC
+    ${CMAKE_SOURCE_DIR}/TimeTracker/  # Путь к заголовочным файлам TimeTracker
+)
 
 # Связывание библиотеки с Qt
 target_link_libraries(Reminder PRIVATE Qt${QT_VERSION_MAJOR}::Widgets)

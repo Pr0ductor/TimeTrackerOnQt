@@ -12,8 +12,8 @@ set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 # Поиск Qt
-find_package(QT NAMES Qt6 Qt5 REQUIRED COMPONENTS Widgets)
-find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Widgets)
+find_package(QT NAMES Qt6 Qt5 REQUIRED COMPONENTS Widgets Multimedia)
+find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Widgets Multimedia)
 
 # Определение исходных файлов основного проекта
 set(PROJECT_SOURCES
@@ -22,6 +22,8 @@ set(PROJECT_SOURCES
     mainwindow.h
     mainwindow.ui
     resources.qrc
+    messageboxhelper.h
+    messageboxhelper.cpp
 )
 
 # Создание исполняемого файла
@@ -33,6 +35,9 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
         Kanban/Kanban.qrc
         Reminder/Reminder.qrc
         Timer/Timer.qrc
+        messageboxhelper.h
+        messageboxhelper.h
+        messageboxhelper.h messageboxhelper.cpp
 
     )
 else()
@@ -44,7 +49,10 @@ else()
 endif()
 
 # Связывание с библиотекой Qt
-target_link_libraries(TimeTracker PRIVATE Qt${QT_VERSION_MAJOR}::Widgets)
+target_link_libraries(TimeTracker PRIVATE
+    Qt${QT_VERSION_MAJOR}::Widgets
+    Qt${QT_VERSION_MAJOR}::Multimedia
+)
 
 # Добавление подпроектов
 add_subdirectory(StopWatch)
@@ -90,3 +98,4 @@ install(TARGETS TimeTracker
 if(QT_VERSION_MAJOR EQUAL 6)
     qt_finalize_executable(TimeTracker)
 endif()
+

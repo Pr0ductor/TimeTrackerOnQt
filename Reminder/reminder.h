@@ -2,6 +2,10 @@
 #define REMINDER_H
 
 #include <QMainWindow>
+#include <QListWidget>
+#include <QTimer>
+#include <QDate>
+#include <QTime>
 
 QT_BEGIN_NAMESPACE
 namespace Ui {
@@ -19,10 +23,14 @@ public:
 
 private slots:
     void on_GoBackToMenu_clicked();
-
     void updateCurrentTime();
+    void on_AddReminder_clicked();
+    void on_ListForReminders_itemChanged(QListWidgetItem *item);
 
 private:
+    void loadRemindersFromFile();
+
     Ui::Reminder *ui;
 };
+
 #endif // REMINDER_H

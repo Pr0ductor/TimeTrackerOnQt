@@ -113,47 +113,6 @@ background-color: transparent; /* Прозрачный фон */
      <pixmap resource="Reminder.qrc">:/Reminder/calendar-tick.png</pixmap>
     </property>
    </widget>
-   <widget class="QLabel" name="label_4">
-    <property name="geometry">
-     <rect>
-      <x>610</x>
-      <y>140</y>
-      <width>534</width>
-      <height>512</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">QLabel {
-background-color: #3E828C; /* Цвет фона */
-border-radius: 30px; /* Затупленные углы */
-padding: 0; /* Отступы */
-}
-</string>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-   </widget>
-   <widget class="QLabel" name="label_5">
-    <property name="geometry">
-     <rect>
-      <x>630</x>
-      <y>170</y>
-      <width>171</width>
-      <height>84</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">QLabel {
-background-color: transparent; /* Прозрачный фон */
-color: black;
-}
-</string>
-    </property>
-    <property name="text">
-     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:24pt; font-weight:700;&quot;&gt;Tomorrow &lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:24pt; font-weight:700;&quot;&gt;Counter: &lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-    </property>
-   </widget>
    <widget class="QLabel" name="label_6">
     <property name="geometry">
      <rect>
@@ -200,161 +159,7 @@ color: black;
      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:144pt;&quot;&gt;14:40&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
     </property>
    </widget>
-   <widget class="QCheckBox" name="checkBox">
-    <property name="geometry">
-     <rect>
-      <x>630</x>
-      <y>310</y>
-      <width>321</width>
-      <height>60</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <pointsize>30</pointsize>
-     </font>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">background-color: transparent; /* Прозрачный фон */
-color: white;</string>
-    </property>
-    <property name="text">
-     <string>Напоминание время</string>
-    </property>
-   </widget>
-   <widget class="QCheckBox" name="checkBox_2">
-    <property name="geometry">
-     <rect>
-      <x>630</x>
-      <y>360</y>
-      <width>311</width>
-      <height>60</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <pointsize>30</pointsize>
-     </font>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">background-color: transparent; /* Прозрачный фон */
-color: white;</string>
-    </property>
-    <property name="text">
-     <string>Напоминание время</string>
-    </property>
-   </widget>
-   <widget class="QCheckBox" name="checkBox_3">
-    <property name="geometry">
-     <rect>
-      <x>630</x>
-      <y>410</y>
-      <width>311</width>
-      <height>60</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <pointsize>30</pointsize>
-     </font>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">background-color: transparent; /* Прозрачный фон */
-color: white;</string>
-    </property>
-    <property name="text">
-     <string>Напоминание время</string>
-    </property>
-   </widget>
-   <widget class="QCheckBox" name="checkBox_4">
-    <property name="geometry">
-     <rect>
-      <x>630</x>
-      <y>460</y>
-      <width>311</width>
-      <height>60</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <pointsize>30</pointsize>
-     </font>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">background-color: transparent; /* Прозрачный фон */
-color: white;</string>
-    </property>
-    <property name="text">
-     <string>Напоминание время</string>
-    </property>
-   </widget>
-   <widget class="QCheckBox" name="checkBox_5">
-    <property name="geometry">
-     <rect>
-      <x>630</x>
-      <y>510</y>
-      <width>311</width>
-      <height>60</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <pointsize>30</pointsize>
-     </font>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">background-color: transparent; /* Прозрачный фон */
-color: white;</string>
-    </property>
-    <property name="text">
-     <string>Напоминание время</string>
-    </property>
-   </widget>
-   <widget class="QCheckBox" name="checkBox_6">
-    <property name="geometry">
-     <rect>
-      <x>630</x>
-      <y>560</y>
-      <width>311</width>
-      <height>60</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <pointsize>30</pointsize>
-     </font>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">background-color: transparent; /* Прозрачный фон */
-color: white;</string>
-    </property>
-    <property name="text">
-     <string>Напоминание время</string>
-    </property>
-   </widget>
-   <widget class="QCheckBox" name="checkBox_7">
-    <property name="geometry">
-     <rect>
-      <x>630</x>
-      <y>260</y>
-      <width>321</width>
-      <height>60</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <pointsize>30</pointsize>
-     </font>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">background-color: transparent; /* Прозрачный фон */
-color: white;</string>
-    </property>
-    <property name="text">
-     <string>Напоминание время</string>
-    </property>
-   </widget>
-   <widget class="QTextEdit" name="textEdit">
+   <widget class="QTextEdit" name="ReminderName">
     <property name="geometry">
      <rect>
       <x>110</x>
@@ -375,54 +180,7 @@ padding: 0; /* Отступы */
      <string>Enter reminder text...</string>
     </property>
    </widget>
-   <widget class="QTextEdit" name="textEdit_2">
-    <property name="geometry">
-     <rect>
-      <x>110</x>
-      <y>360</y>
-      <width>192</width>
-      <height>45</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <pointsize>-1</pointsize>
-     </font>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">background-color: #D9D9D9; /* Цвет фона */
-border-radius: 20px; /* Затупленные углы */
-color: black; /*белый цвет текста */
-font-size: 24px;
-padding: 0; /* Отступы */
-</string>
-    </property>
-    <property name="placeholderText">
-     <string>Choose time</string>
-    </property>
-   </widget>
-   <widget class="QTextEdit" name="textEdit_3">
-    <property name="geometry">
-     <rect>
-      <x>110</x>
-      <y>460</y>
-      <width>192</width>
-      <height>45</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">background-color: #D9D9D9; /* Цвет фона */
-border-radius: 20px; /* Затупленные углы */
-color: black; /*белый цвет текста */
-font-size: 24px;
-padding: 0; /* Отступы */
-</string>
-    </property>
-    <property name="placeholderText">
-     <string>Choose data</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="pushButton">
+   <widget class="QPushButton" name="AddReminder">
     <property name="geometry">
      <rect>
       <x>110</x>
@@ -449,64 +207,98 @@ padding: 0; /* Отступы */
      <string>Add reminder</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_2">
+   <widget class="QDateEdit" name="ReminderDate">
     <property name="geometry">
      <rect>
-      <x>255</x>
-      <y>463</y>
-      <width>36</width>
-      <height>36</height>
+      <x>110</x>
+      <y>460</y>
+      <width>192</width>
+      <height>45</height>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">QPushButton {
-    background-color: transparent; /* Прозрачный фон */
-    border: none;                /* Убираем границы */
-    padding: 0;                  /* Убираем внутренние отступы, если они есть */
-}</string>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-    <property name="icon">
-     <iconset resource="Reminder.qrc">
-      <normaloff>:/Reminder/calendar-add.png</normaloff>:/Reminder/calendar-add.png</iconset>
-    </property>
-    <property name="iconSize">
-     <size>
-      <width>36</width>
-      <height>36</height>
-     </size>
+     <string notr="true">background-color: #D9D9D9; /* Цвет фона */
+border-radius: 20px; /* Затупленные углы */
+color: black; /*белый цвет текста */
+font-size: 24px;
+padding: 0; /* Отступы */
+</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_3">
+   <widget class="QTimeEdit" name="ReminderTime">
     <property name="geometry">
      <rect>
-      <x>250</x>
+      <x>110</x>
       <y>360</y>
-      <width>46</width>
-      <height>46</height>
+      <width>192</width>
+      <height>45</height>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">QPushButton {
-    background-color: transparent; /* Прозрачный фон */
-    border: none;                /* Убираем границы */
-    padding: 0;                  /* Убираем внутренние отступы, если они есть */
-}</string>
+     <string notr="true">background-color: #D9D9D9; /* Цвет фона */
+border-radius: 20px; /* Затупленные углы */
+color: black; /*белый цвет текста */
+font-size: 24px;
+padding: 0; /* Отступы */
+</string>
+    </property>
+   </widget>
+   <widget class="QListWidget" name="ListForReminders">
+    <property name="geometry">
+     <rect>
+      <x>590</x>
+      <y>220</y>
+      <width>534</width>
+      <height>400</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">
+background-color: #3E828C; /* Цвет фона */
+
+padding: 0; /* Отступы */
+
+</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_4">
+    <property name="geometry">
+     <rect>
+      <x>590</x>
+      <y>141</y>
+      <width>534</width>
+      <height>80</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">
+background-color: #3E828C; /* Цвет фона */
+padding: 0; /* Отступы */
+
+</string>
     </property>
     <property name="text">
      <string/>
     </property>
-    <property name="icon">
-     <iconset resource="Reminder.qrc">
-      <normaloff>:/Reminder/klipartz.com.png</normaloff>:/Reminder/klipartz.com.png</iconset>
+   </widget>
+   <widget class="QLabel" name="label_5">
+    <property name="geometry">
+     <rect>
+      <x>620</x>
+      <y>150</y>
+      <width>171</width>
+      <height>84</height>
+     </rect>
     </property>
-    <property name="iconSize">
-     <size>
-      <width>46</width>
-      <height>46</height>
-     </size>
+    <property name="styleSheet">
+     <string notr="true">QLabel {
+background-color: transparent; /* Прозрачный фон */
+color: black;
+}
+</string>
+    </property>
+    <property name="text">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:24pt; font-weight:700;&quot;&gt;Tomorrow &lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:24pt; font-weight:700;&quot;&gt;Counter: &lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
     </property>
    </widget>
   </widget>
@@ -516,7 +308,7 @@ padding: 0; /* Отступы */
      <x>0</x>
      <y>0</y>
      <width>1175</width>
-     <height>25</height>
+     <height>36</height>
     </rect>
    </property>
   </widget>
