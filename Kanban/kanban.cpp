@@ -4,6 +4,9 @@
 #include "../mainwindow.h"
 #include <QDebug>
 #include <QTimer>
+#include <QDir>
+#include <QFile>
+#include <QTextStream>
 
 Kanban::Kanban(QWidget *parent)
     : QMainWindow(parent), ui(new Ui::Kanban)
@@ -101,14 +104,21 @@ QString Kanban::getProjectRootPath()
 
     return dir.path();
 }
+
 void Kanban::saveTasksToFile()
 {
     QString projectRoot = getProjectRootPath();
-    QString filePath = projectRoot + "/saved_results/kanban_tasks.txt";
+    QString folderPath = projectRoot + "/saved_results";
+    QString filePath = folderPath + "/kanban_tasks.txt";
 
     QDir dir;
-    if (!dir.exists(dir.filePath("saved_results"))) {
-        dir.mkdir("saved_results");
+    if (!dir.exists(folderPath)) {
+        bool created = dir.mkpath(folderPath);
+        if (!created) {
+            qDebug() << "Не удалось создать папку:" << folderPath;
+            return;
+        }
+        qDebug() << "Папка создана:" << folderPath;
     }
 
     QFile file(filePath);
@@ -143,13 +153,20 @@ void Kanban::saveTasksToFile()
 void Kanban::loadTasksFromFile()
 {
     QString projectRoot = getProjectRootPath();
-    QString filePath = projectRoot + "/saved_results/kanban_tasks.txt";
+    QString folderPath = projectRoot + "/saved_results";
+    QString filePath = folderPath + "/kanban_tasks.txt";
+
+    QDir dir;
+    if (!dir.exists(folderPath)) {
+        dir.mkpath(folderPath); // Создаем папку, если её нет
+        qDebug() << "Создана папка для сохранения задач:" << folderPath;
+    }
 
     QFile file(filePath);
-
     if (!file.exists()) {
-        qDebug() << "Файл не найден:" << filePath;
-        return;
+        file.open(QIODevice::WriteOnly | QIODevice::Text);
+        file.close();
+        qDebug() << "Создан новый файл:" << filePath;
     }
 
     if (!file.open(QIODevice::ReadOnly | QIODevice::Text)) {
@@ -201,4 +218,5 @@ void Kanban::loadTasksFromFile()
     }
 
     file.close();
+    qDebug() << "Задачи загружены из" << filePath;
 }
