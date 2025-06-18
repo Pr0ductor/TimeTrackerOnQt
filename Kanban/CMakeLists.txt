@@ -20,11 +20,15 @@ set(KANBAN_SOURCES
     kanban.cpp
     kanban.h
     kanban.ui
+    taskcard.cpp
+    taskcard.h
     ../Kanban/Kanban.qrc
 )
 
 # Создание статической библиотеки
-add_library(Kanban STATIC ${KANBAN_SOURCES})
+add_library(Kanban STATIC ${KANBAN_SOURCES}
+    taskcard.h
+    taskcard.cpp)
 
 # Связывание библиотеки с Qt
 target_link_libraries(Kanban PRIVATE Qt${QT_VERSION_MAJOR}::Widgets)
