@@ -24,7 +24,8 @@ set(REMINDER_SOURCES
 )
 
 # Создание статической библиотеки
-add_library(Reminder STATIC ${REMINDER_SOURCES})
+add_library(Reminder STATIC ${REMINDER_SOURCES}
+    notificationmanager.h notificationmanager.cpp notificationmanager.ui)
 
 target_link_libraries(Reminder PRIVATE
     Qt${QT_VERSION_MAJOR}::Widgets

@@ -4,6 +4,8 @@
 #include <QMainWindow>
 #include <QListWidget>
 #include <QTimer>
+#include <QDate>
+#include <QTime>
 
 QT_BEGIN_NAMESPACE
 namespace Ui {
@@ -26,12 +28,9 @@ private slots:
     void on_ListForReminders_itemChanged(QListWidgetItem *item);
 
 private:
-    Ui::Reminder *ui;
-    QList<struct ReminderData> reminders;
-    void checkReminders();
-    void showNotification(const QString &title);
-    void saveRemindersToFile();
     void loadRemindersFromFile();
+
+    Ui::Reminder *ui;
 };
 
 #endif // REMINDER_H

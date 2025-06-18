@@ -39,7 +39,6 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
         messageboxhelper.h
         messageboxhelper.h messageboxhelper.cpp
 
-
     )
 else()
     if(ANDROID)
