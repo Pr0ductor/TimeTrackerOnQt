@@ -181,13 +181,16 @@ void StopWatch::loadSavedResults()
 
     for (const QString &result : results.mid(qMax(0, results.size() - 20))) {
 
+        QStringList lines = result.split("\n");
+        QString savedDateTime;
         QString time;
         QString description;
 
-        QStringList lines = result.split("\n");
         for (const QString &line : lines) {
             QString tempLine = line;
-            if (tempLine.startsWith("Time recorded: ")) {
+            if (tempLine.startsWith("Saved at: ")) {
+                savedDateTime = tempLine.remove("Saved at: ");
+            } else if (tempLine.startsWith("Time recorded: ")) {
                 time = tempLine.remove("Time recorded: ");
             } else if (tempLine.startsWith("Description: ")) {
                 description = tempLine.remove("Description: ");
@@ -201,14 +204,89 @@ void StopWatch::loadSavedResults()
             "background-color: #565555;"
             "border-radius: 10px;"
             "padding: 10px;"
-            "color: white;"
+            "color: black;"
             "font-size: 18px;"
             "font-weight: bold;"
             "}"
             "QPushButton:hover {"
             "background-color: #4CA8B7;"
             "}"
+            "QToolTip {"
+            "color: black;"
+            "background-color: white;"
+            "border: 1px solid #565555;"
+            "}"
             );
+
+        QPushButton *deleteButton = new QPushButton("×", button);
+        deleteButton->setFixedSize(30, 30);
+        deleteButton->setStyleSheet(
+            "QPushButton {"
+            "background-color: #ff4444;"
+            "border-radius: 15px;"
+            "color: white;"
+            "font-size: 20px;"
+            "font-weight: bold;"
+            "}"
+            "QPushButton:hover {"
+            "background-color: #ff0000;"
+            "}"
+            );
+        deleteButton->move(160, 10);
+
+        QString tooltipText = QString("Дата сохранения: %1\nЗаписанное время: %2\nОписание: %3")
+            .arg(savedDateTime)
+            .arg(time)
+            .arg(description);
+        button->setToolTip(tooltipText);
+
+        connect(deleteButton, &QPushButton::clicked, this, [this, result]() {
+            QString projectRoot = getProjectRootPath();
+            QString filePath = projectRoot + "/saved_results/stopwatch_savedresults.txt";
+
+            QFile file(filePath);
+            if (!file.open(QIODevice::ReadOnly | QIODevice::Text)) {
+                qDebug() << "Failed to open file for reading";
+                return;
+            }
+
+            QStringList allResults;
+            QString currentResult;
+            QTextStream in(&file);
+
+            while (!in.atEnd()) {
+                QString line = in.readLine();
+                if (line.startsWith("----------------------------------------")) {
+                    if (!currentResult.isEmpty()) {
+                        allResults.append(currentResult.trimmed());
+                        currentResult.clear();
+                    }
+                } else {
+                    currentResult += line + "\n";
+                }
+            }
+            if (!currentResult.isEmpty()) {
+                allResults.append(currentResult.trimmed());
+            }
+            file.close();
+
+            allResults.removeOne(result.trimmed());
+
+            if (!file.open(QIODevice::WriteOnly | QIODevice::Text)) {
+                qDebug() << "Failed to open file for writing";
+                return;
+            }
+
+            QTextStream out(&file);
+            for (const QString &res : allResults) {
+                out << "----------------------------------------\n";
+                out << res << "\n";
+                out << "*---------------------------------------*\n\n";
+            }
+            file.close();
+
+            loadSavedResults();
+        });
 
         QLabel *label = new QLabel(time, button);
         label->setAlignment(Qt::AlignCenter);
@@ -216,7 +294,7 @@ void StopWatch::loadSavedResults()
         label->setStyleSheet(
             "background-color: #3E828C;"
             "border-radius: 80px;"
-            "color: white;"
+            "color: black;"
             "font-size: 30px;"
             "font-weight: bold;"
             );
